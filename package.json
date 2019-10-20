@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "handlebars": "^4.4.0",
+    "handlebars-intl": "^1.1.2",
     "jquery": "^3.4.1"
   }
 }

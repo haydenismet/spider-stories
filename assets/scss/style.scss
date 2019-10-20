@@ -17,6 +17,16 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1.6rem = 16px
 */
 
+////// VARIABLES //////
+$randomize-grey: #424242;
+$grey: #282828;
+$white: #ffffff;
+$red: #a22d23;
+$dark-red: #621913;
+$off-white: #f2f2f2;
+//////////////////////
+
+////// BODY STYLES //////
 *,
 *::after,
 *::before {
@@ -27,18 +37,22 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 
 html {
-  font-size: 62.5%; /* 16px */ 
+  font-size: 62.5%;
+  /* 16px */
 }
+
 @media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
+
 @media only screen and (max-width: 56.25em) {
   html {
     font-size: 50%;
   }
 }
+
 @media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
@@ -51,10 +65,488 @@ body {
 }
 
 body {
-    font-size:1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
   line-height: 1.7;
-  
+  background-color: $off-white;
 }
 
-//Test
-/*test*/ 
+///////////////////////////
+
+////// GLOBAL STYLES //////
+
+.row {
+  max-width: 120rem;
+  margin: auto;
+  //margin auto to center div left/right  so row is center.
+  //add margin to sections where you want spacing.
+  //greyed out if using flexbox test for search section
+}
+
+.primary__heading {
+  font-size: 1.8rem;
+  display: inline-flex;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $grey;
+  padding: 1rem;
+  letter-spacing: 0.4rem;
+  border-left: 1rem solid $red;
+  margin-bottom: 5rem;
+}
+
+.primary__heading__tab {
+  font-size: 1.8rem;
+  display: inline-flex;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $grey;
+  padding: 1rem;
+  padding-right: 0;
+  letter-spacing: 0.4rem;
+  border-left: 1rem solid $red;
+  margin-bottom: 5rem;
+}
+
+.fourth__heading {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  font-size: 2rem;
+}
+
+.sixth__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+}
+
+.btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  padding:2rem;
+}
+
+.loading {
+  margin: auto;
+  margin-bottom: 15rem;
+  margin-top: 5rem;
+}
+
+
+
+///////////////////////////
+
+////// NAV STYLES //////
+
+.nav__section img {
+  width: 5%;
+}
+
+.nav__section {
+  background-color: $grey;
+
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.button__group {
+  align-self: center;
+}
+
+.btn__nav {
+  color: $grey;
+  background-color: $white;
+  font-size: 1.2rem;
+  padding: 1.3rem;
+  border-style: none;
+  margin-right: 1.6rem;
+}
+
+///////////////////////////
+
+////// SEARCH STYLES //////
+
+.comic__search__section {
+  background-color: $red;
+  height: 80vh; //make relative to VH?
+  //margin-top:-2.2rem;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.comic__search {
+  color: $white;
+  text-align: center;
+  margin-bottom: 10rem;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    border: solid 0.3rem $white;
+  }
+
+  label {
+    display: block;
+    padding: 0.6rem;
+    text-align: center;
+    background-color: $dark-red;
+  }
+
+  &--heading {
+    font-weight: 800;
+    letter-spacing: 1.8rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
+
+  &--radios {
+    //background-color: red;
+
+    li {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &--list {
+    list-style-type: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-weight: 800;
+    font-size: 2rem;
+  }
+
+  &--submit {
+    color: $grey;
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 1rem;
+    text-indent: 1rem;
+    border-style: none;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.comic--radio {
+  cursor: pointer;
+}
+
+.year__container select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+}
+.years__options {
+  display: none;
+}
+
+.years__options {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  background-color: $dark-red;
+  border-style: none;
+  padding: 1rem;
+  color: $white;
+  margin-bottom: 2rem;
+}
+
+.yearContainer {
+  text-align: center;
+}
+
+////// CHARACTER STYLES //////
+
+//////// SINGLE CHARACTERS //////////
+
+.character__card__one {
+  width: 20rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &--info {
+    flex: 1;
+    border-left: solid 1rem $red;
+    padding: 1rem;
+    color: $white;
+    background-color: black;
+
+    a {
+      color: $white;
+      letter-spacing: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &--p {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+//////////////////////////////////////
+
+.character__card__comic--info {
+  flex: 1;
+  border-left: solid 1rem $red;
+  padding: 1rem;
+  color: $white;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+
+  a {
+    align-self: flex-end;
+    color: $white;
+    letter-spacing: 0;
+    font-size: 1.2rem;
+  }
+}
+
+///////////////////////////
+
+////// NEW COMICS STYLES //////
+
+.new__comics {
+  .comic__listings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    img {
+      width: 100%;
+    }
+  }
+
+  &--ulist {
+    text-align: center;
+    display: inline-flex;
+    flex-direction: row;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: $dark-red;
+    }
+
+    label {
+      padding: 1.4rem;
+
+      cursor: pointer;
+    }
+
+    li {
+      list-style-type: none;
+
+      &:first-child {
+        margin-left: 3rem;
+      }
+    }
+  }
+}
+
+.character__template__hb {
+  display: flex;
+  flex-direction: row;
+}
+
+.character__template--link {
+}
+
+.character__card {
+  width: 20rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &--info {
+    flex: 1;
+    border-left: solid 1rem $red;
+    padding: 1rem;
+    color: $white;
+    background-color: black;
+
+    a {
+      color: $white;
+      letter-spacing: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &--p {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+  }
+}
+/////////////////////
+
+////// RANDOMIZE STYLES //////
+
+
+/////SORT SIZING //// 
+
+.randomize {
+
+  
+
+  &__again {
+
+  }
+  
+  &__ul {
+    display: flex;
+  }
+
+
+  &__comic__whole {
+display:flex;
+    
+  }
+
+  &__image img {
+    
+  }
+
+  &__info {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
+    margin-left: 5rem;
+  
+  }
+
+  &__headings__group {
+    display: flex;
+  }
+
+  &__issue {
+    font-size: 4rem;
+    background-color: $red;
+    font-weight: 700;
+    color: $white;
+    align-self: flex-start;
+    padding: 2rem;
+    margin-right: 3rem;
+    border-left: 1rem solid $grey;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: $randomize-grey;
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  &__triple__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      padding: 1.6rem 2rem 1.6rem 2rem;
+      background-color: $grey;
+      font-size: 1.6rem;
+      color: $white;
+      font-weight: 600;
+      margin:2rem 2rem 2rem 0;
+    }
+  }
+
+ 
+
+  &__creators {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $white;
+  }
+
+
+  &__links__btns {
+    display:flex;
+    justify-content: flex-start;
+    
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration:none;
+    
+    }
+  }
+
+  &__link {
+    
+    font-size: 1.6rem;
+    background-color: $grey;
+    color: $white;
+    font-weight: 900;
+    border: 0;
+    margin-right:2rem;
+
+    
+  }
+
+  
+
+  &__btn {
+    
+    font-size: 1.6rem;
+    background-color: $red;
+    color: $white;
+    font-weight: 900;
+    border: 0;
+ 
+    
+  }
+}
+
+.footer {
+  color: $white;
+  margin-top: 5rem;
+  background-color: $grey;
+  padding: 5rem;
+}
