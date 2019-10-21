@@ -95,12 +95,12 @@ update to meet es5/es6?? probably too complex/not enough time.
               <label for="characters">Characters</label>
             </li>
             <li>
-            <input type="radio" id="years" class="comic--radio" name="skills" value="years">
-            <label for="years">Years</label>
-          </li>
-          
-              
-              <select name="years__chosen" class="years__options">
+              <input type="radio" id="years" class="comic--radio" name="skills" value="years">
+              <label for="years">Years</label>
+            </li>
+
+
+            <select name="years__chosen" class="years__options">
               <option value="1990">1990</option>
               <option value="1991">1991</option>
               <option value="1992">1992</option>
@@ -131,11 +131,11 @@ update to meet es5/es6?? probably too complex/not enough time.
               <option value="2017">2017</option>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
-                  
-                </select>
-             
-           
-          
+
+            </select>
+
+
+
         </div>
         </ul>
         <input class="comic__search--submit" type="submit" value="GO">
@@ -143,37 +143,83 @@ update to meet es5/es6?? probably too complex/not enough time.
     </div>
   </section>
 
+
+  <section class="search">
+
+    <div class="row">
+
+      <h1 class="primary__heading">Search Results</h1>
+
+      <div class="search__results">
+
+
+        <ul class="search__results__template__ul">
+          <script id="search__results__template__script" type="text/x-handlebars-template">
+            {{#each this }}
+            <div class="character__card__one">
+
+                <div class="character__card--img">  
+          
+                  <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
+                   alt="{{name}}"> <!--dynamic alt tag?-->
+                </div>
+          
+                <div class="character__card--info">
+                    <h6 class="sixth__heading"> {{name}}  </h6>
+                  {{#unless name}}
+                 <h6 class="sixth__heading">{{title}}</h6> 
+                  {{/unless}}
+             
+              
+                </div>
+          
+                </div>
+                {{/each}}
+            </script>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
   <section class="characters">
     <div class="row">
       <h1 class="primary__heading">
         spider-verse characters
       </h1>
-
       <ul class="character__template__hb">
         <script id="character__template" type="text/x-handlebars-template">
+          {{#each this}}
 
-        {{#each this}}
-        <a class="character__template--link" href="{{urls.0.url}}" target="_blank">
+       
     <div class="character__card__one">
+
       <div class="character__card--img">  
+
         <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
          alt="spider-man"> <!--dynamic alt tag?-->
       </div>
+
       <div class="character__card--info">
+
         <h6 class="sixth__heading"> {{name}}  </h6>
+
       <p class="character__card--p"> {{ comics.available}} issues </p> 
-       </a> 
+    
       </div>
+
       </div>
       {{/each}}
     </script>
       </ul>
-
-
-
-
-
-
+      </div>
   </section>
 
   <section class="new__comics">
@@ -210,12 +256,12 @@ update to meet es5/es6?? probably too complex/not enough time.
 
   <section class="randomize">
     <div class="row">
-        
+
       <h1 class="primary__heading"> spider issues of 2019 </h1>
       <form class="randomize__again">
-      <ul class="randomize__ul">
-         
-        <script id="comic__book__randomize__template" type="text/x-handlebars-template">
+        <ul class="randomize__ul">
+
+          <script id="comic__book__randomize__template" type="text/x-handlebars-template">
           <div class="randomize__comic__whole">
         <div class="randomize__image"><img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{title}}">
           <!--dynamic alt tag?-->
@@ -258,9 +304,9 @@ update to meet es5/es6?? probably too complex/not enough time.
       </div>
     
         </script>
-      </ul>
-    </form>
-   
+        </ul>
+      </form>
+
 
   </section>
 
@@ -274,8 +320,8 @@ update to meet es5/es6?? probably too complex/not enough time.
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src=""></script>
-    <script src="assets/js/config.js"></script>
+  <script src=""></script>
+  <script src="assets/js/config.js"></script>
   <script src="node_modules/crypto-js/crypto-js.js"></script>
   <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
   <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js"></script>

@@ -550,3 +550,11 @@ display:flex;
   background-color: $grey;
   padding: 5rem;
 }
+
+
+////// SEARCH RESULT STYLES //////
+.search__results__template__ul {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}

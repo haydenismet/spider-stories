@@ -61,7 +61,7 @@ $(".comic__search").on("submit", function (e) {
 
   //URL for character selected to be used
   characterURL =
-    "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-&orderBy=-name&limit=100" +
+    "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-&orderBy=-name&limit=20" +
     "&ts=" +
     ts +
     "&apikey=" +
@@ -91,18 +91,28 @@ $(".comic__search").on("submit", function (e) {
       url = yearURL;
       break;
     default:
-      console.log("error");
+      alert("Click the link first and FIX THIS!");
   }
 
   //Fetching api data
   $.ajax({
     type: "GET",
     url: url,
-    success: function (response) {
+    success: function (responseSearch) {
       $(".comic__search--list")
         .children()
         .remove(".loading");
-      console.log(response);
+      console.log(responseSearch);
+
+      $(".characters").remove();
+      $(".new__comics").remove();      
+      $(".randomize").remove();
+      ////////////// SEARCH ///////////////
+    var source = $("#search__results__template__script").html();
+    var template = Handlebars.compile(source);
+    var searchData = responseSearch.data.results;
+    var displayData = template(searchData);
+    $(".search__results__template__ul").append(displayData);
     },
     beforeSend: function () {
       $(".comic__search--list").prepend(
@@ -321,7 +331,7 @@ function randomizeSpider() {
       var displayData = template(characterData);
       $(".randomize__ul").append(displayData);
 
-      console.log(randomIssueIs);
+    //  console.log(randomIssueIs);
     },
     beforeSend: function () {
       $(".randomize__ul").prepend(
