@@ -283,29 +283,14 @@ body {
   margin-right: 3rem;
   display: flex;
   flex-direction: column;
+ 
 
-  &--info {
-    flex: 1;
-    border-left: solid 1rem $red;
-    padding: 1rem;
-    color: $white;
-    background-color: black;
-
-    a {
-      color: $white;
-      letter-spacing: 0;
-      font-size: 1.2rem;
-    }
-  }
-
+  
   img {
     width: 100%;
   }
 
-  &--p {
-    font-size: 1.2rem;
-    letter-spacing: 0.5rem;
-  }
+  
 }
 
 //////////////////////////////////////
@@ -318,6 +303,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: row;
+  
 
   a {
     align-self: flex-end;
@@ -373,6 +359,7 @@ body {
 .character__template__hb {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .character__template--link {

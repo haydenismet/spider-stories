@@ -156,6 +156,7 @@ $.ajax({
     "&hash=" +
     hash,
   success: function (response) {
+    console.log(response);
     $(".character__template__hb")
       .children()
       .remove(".loading");
@@ -221,7 +222,7 @@ function callComicDates(paramDate) {
 
       var source = $("#comic__book__template").html();
       var template = Handlebars.compile(source);
-      var comicData = responseComics.data.results; //needs to be dynamic?
+      var comicData = responseComics.data.results; 
       var displayData = template(comicData);
       $(".comic__listings").append(displayData);
       //console.log(comicData);
@@ -355,6 +356,17 @@ $(".randomize__again").on("submit", function (e) {
 
   randomizeSpider();
 });
+
+
+////////////////////////////////////////////////////////////
+
+
+///////////////////////  FOOTER //////////////////////////
+
+
+$('.footer__area').children('p').html('Data provided by Marvel. © '+ y +' Marvel');
+
+
 
 
 ////////////////////////////////////////////////////////////

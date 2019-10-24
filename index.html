@@ -55,6 +55,18 @@ is event delegation needed on .comic__search??
 
 update to meet es5/es6?? probably too complex/not enough time. 
 
+check against w3c standards etc 
+
+fix messy character card one
+
+check scss again online 
+
+TIDY UP CSS AND HTML BIG TIME 
+
+fix sizing issue on characters 
+
+date section in comics? 
+
 -->
 
 <!DOCTYPE html>
@@ -156,12 +168,18 @@ update to meet es5/es6?? probably too complex/not enough time.
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
+            <a href=" {{urls.2.url}}  " target="_blank" >
+
+                {{#unless urls.2.url}} 
+                      <a href=" http://marvel.com" target="_blank" > 
+                      {{/unless}}
+            
             <div class="character__card__one">
 
                 <div class="character__card--img">  
           
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-                   alt="{{name}}"> <!--dynamic alt tag?-->
+                   alt="{{name}}"> 
                 </div>
           
                 <div class="character__card--info">
@@ -174,6 +192,7 @@ update to meet es5/es6?? probably too complex/not enough time.
                 </div>
           
                 </div>
+                </a>
                 {{/each}}
             </script>
         </ul>
@@ -198,17 +217,32 @@ update to meet es5/es6?? probably too complex/not enough time.
         <script id="character__template" type="text/x-handlebars-template">
           {{#each this}}
 
-       
+      
+
+
+
+
+
+
     <div class="character__card__one">
 
       <div class="character__card--img">  
+          <a href=" {{urls.2.url}}  " target="_blank" >
 
+              {{#unless urls.2.url}} 
+                    <a href=" http://marvel.com" target="_blank" > 
+                    {{/unless}}
         <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-         alt="spider-man"> <!--dynamic alt tag?-->
+        alt="{{name}}">  </a>
       </div>
 
       <div class="character__card--info">
+          <a href=" {{urls.2.url}}  " target="_blank" >
 
+              {{#unless urls.2.url}} 
+                    <a href=" http://marvel.com" target="_blank" > 
+                    {{/unless}}
+          
         <h6 class="sixth__heading"> {{name}}  </h6>
 
       <p class="character__card--p"> {{ comics.available}} issues </p> 
@@ -216,6 +250,7 @@ update to meet es5/es6?? probably too complex/not enough time.
       </div>
 
       </div>
+      </a>
       {{/each}}
     </script>
       </ul>
@@ -241,11 +276,11 @@ update to meet es5/es6?? probably too complex/not enough time.
       <div class="character__card">
         <div class="character__card--img">  
           <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-           alt="spider-man"> <!--dynamic alt tag?-->
+          alt="{{title}}"> 
         </div>
         <div class="character__card__comic--info">
           <h6 class="sixth__heading"> {{title}}  </h6>
-        <!--  <p class="character__card--p"> {{ dates.0.date}}</p>   -->
+       <!-- <p class="character__card--p"> {{formatDate dates.0.date day="numeric" month="short" }}</p>   --> 
         <a href="{{urls.0.url}}" target="_blank"> more</a> 
         </div>
         </div>
@@ -313,7 +348,7 @@ update to meet es5/es6?? probably too complex/not enough time.
   <section class="footer">
     <div class="row">
       <div class="footer__area">
-        <p> FOOTER AREA </p>
+        <p> </p>
       </div>
     </div>
   </section>

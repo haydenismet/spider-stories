@@ -204,21 +204,8 @@ body {
   margin-right: 3rem;
   display: flex;
   flex-direction: column; }
-  .character__card__one--info {
-    flex: 1;
-    border-left: solid 1rem #a22d23;
-    padding: 1rem;
-    color: #ffffff;
-    background-color: black; }
-    .character__card__one--info a {
-      color: #ffffff;
-      letter-spacing: 0;
-      font-size: 1.2rem; }
   .character__card__one img {
     width: 100%; }
-  .character__card__one--p {
-    font-size: 1.2rem;
-    letter-spacing: 0.5rem; }
 
 .character__card__comic--info {
   flex: 1;
@@ -259,7 +246,8 @@ body {
 
 .character__template__hb {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 .character__card {
   width: 20rem;
