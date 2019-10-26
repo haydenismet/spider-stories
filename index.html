@@ -180,14 +180,19 @@ date section in comics?
           
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
                    alt="{{name}}"> 
-                </div>
+                </div> </a>
           
                 <div class="character__card--info">
+                    <a href=" {{urls.2.url}}  " target="_blank" >
+
+                        {{#unless urls.2.url}} 
+                              <a href=" http://marvel.com" target="_blank" > 
+                              {{/unless}}
                     <h6 class="sixth__heading"> {{name}}  </h6>
                   {{#unless name}}
                  <h6 class="sixth__heading">{{title}}</h6> 
                   {{/unless}}
-             
+                                </a>
               
                 </div>
           
