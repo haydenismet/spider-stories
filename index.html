@@ -168,9 +168,9 @@ date section in comics?
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-            <a href=" {{urls.2.url}}  " target="_blank" >
+            <a href="{{urls.0.url}}"  target="_blank" >
 
-                {{#unless urls.2.url}} 
+                {{#unless urls.0.url}} 
                       <a href=" http://marvel.com" target="_blank" > 
                       {{/unless}}
             
@@ -183,17 +183,10 @@ date section in comics?
                 </div> </a>
           
                 <div class="character__card--info">
-                    <a href=" {{urls.2.url}}  " target="_blank" >
+                  
+                    <a href=" {{urls.0.url}}  " target="_blank" >
 
-                        {{#unless urls.2.url}} 
-                              <a href="{{urls.1.url}}" target="_blank" > 
-                              {{/unless}}
-
-                              {{#unless urls.1.url}} 
-                              <a href="{{urls.0.url}}" target="_blank" > 
-                              {{/unless}}
-
-                              {{#unless urls.0.url}} 
+                            {{#unless urls.0.url}}
                               <a href="https://www.marvel.com" target="_blank" > 
                               {{/unless}}
 
