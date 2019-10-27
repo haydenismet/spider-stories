@@ -103,7 +103,7 @@ date section in comics?
         <div class="comic__search--radios">
           <ul class="comic__search--list">
             <li>
-              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters">
+              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters" >
               <label for="characters">Characters</label>
             </li>
             <li>
@@ -186,8 +186,19 @@ date section in comics?
                     <a href=" {{urls.2.url}}  " target="_blank" >
 
                         {{#unless urls.2.url}} 
-                              <a href=" http://marvel.com" target="_blank" > 
+                              <a href="{{urls.1.url}}" target="_blank" > 
                               {{/unless}}
+
+                              {{#unless urls.1.url}} 
+                              <a href="{{urls.0.url}}" target="_blank" > 
+                              {{/unless}}
+
+                              {{#unless urls.0.url}} 
+                              <a href="https://www.marvel.com" target="_blank" > 
+                              {{/unless}}
+
+
+
                     <h6 class="sixth__heading"> {{name}}  </h6>
                   {{#unless name}}
                  <h6 class="sixth__heading">{{title}}</h6> 
@@ -199,11 +210,18 @@ date section in comics?
                 </div>
                 </a>
                 {{/each}}
+               
             </script>
         </ul>
 
       </div>
-
+      <a href="https://www.marvel.com" class="search__results--end">
+      <div class="search__results--external">
+        
+        <p> Results are limited to 10. </p> <p>Discover more at marvel.com</p> 
+      
+      </div>
+    </a>
     </div>
 
   </section>
@@ -353,8 +371,12 @@ date section in comics?
   <section class="footer">
     <div class="row">
       <div class="footer__area">
-        <p> </p>
+        <p class="footer__area__marvel"> </p>
+        <p>  Made by <a href="google.com">joshua.tree.ctrl</a> </p>
+      
       </div>
+      <p>This is a personal project as part of a learning course. </p>
+    
     </div>
   </section>
 

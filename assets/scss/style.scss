@@ -360,6 +360,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .character__template--link {
@@ -536,7 +537,18 @@ display:flex;
   margin-top: 5rem;
   background-color: $grey;
   padding: 5rem;
+ 
+
+  &__area {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+  }
+
+
 }
+
+
 
 
 ////// SEARCH RESULT STYLES //////
@@ -544,4 +556,22 @@ display:flex;
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  justify-content:center;
+}
+
+.search__results--external {
+  display:flex;
+  text-align:center;
+  border-left: 1rem solid #a22d23;
+  border-right: 1rem solid #a22d23;
+  padding:1rem;
+  color:$white;
+  flex-direction:column;
+  align-items:center;
+  background-color:$grey;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  font-size: 1.6rem;
+
 }

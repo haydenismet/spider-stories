@@ -9,14 +9,6 @@ var y = d.getFullYear();
 var searchSelect; //global variable to use further on in code
 ////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
 ////////////////// CLICK EVENT - STORE RADIO BUTTON SELECTED - SHOW/HIDE YEARS  //////////////////
 $(".comic__search--list").on("click", "li", function () {
   searchSelect = $(this)
@@ -31,29 +23,25 @@ $(".comic__search--list").on("click", "li", function () {
 });
 ////////////////////////////////////////////////////////////
 
+$(".search")
+  .children()
+  .children(".primary__heading")
+  .hide(); // HIDE SEARCH TEMPLATE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$(".search")
+  .find(".search__results--end")
+  .hide(); // HIDE SEARCH TEMPLATE
 
 ///////////////// SEARCH FUNCTION  ///////////////////
 $(".comic__search").on("submit", function (e) {
+  
+ if ($('a').is(':empty')) {
+   console.log('empty');
+ } else {$('.test').empty(); }
+
+  
   e.preventDefault(); //prevent default page reload
+  console.log($(this));
   var yearURL; //declare variables
   var url;
   var characterURL;
@@ -61,7 +49,7 @@ $(".comic__search").on("submit", function (e) {
 
   //URL for character selected to be used
   characterURL =
-    "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-&orderBy=-name&limit=20" +
+    "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-&orderBy=-name&limit=10" +
     "&ts=" +
     ts +
     "&apikey=" +
@@ -75,7 +63,7 @@ $(".comic__search").on("submit", function (e) {
     yearChoice +
     "-01-01%2C%20" +
     yearChoice +
-    "-12-31&characters=1009610%2C1014873%2C1017603%2C1016181%2C1011347%2C1010727%2C1012200%2C1011197%2C1012295%2C1009609&limit=100" +
+    "-12-31&characters=1009610%2C1014873%2C1017603%2C1016181%2C1011347%2C1010727%2C1012200%2C1011197%2C1012295%2C1009609&limit=10" +
     "&ts=" +
     ts +
     "&apikey=" +
@@ -99,23 +87,29 @@ $(".comic__search").on("submit", function (e) {
     type: "GET",
     url: url,
     success: function (responseSearch) {
-      $(".comic__search--list")
+      $(".search__results__template__ul")
         .children()
         .remove(".loading");
+
+      $(".search__results--end").show();
+      $(".search")
+        .children()
+        .children(".primary__heading")
+        .show();
       console.log(responseSearch);
 
       $(".characters").remove();
-      $(".new__comics").remove();      
+      $(".new__comics").remove();
       $(".randomize").remove();
       ////////////// SEARCH ///////////////
-    var source = $("#search__results__template__script").html();
-    var template = Handlebars.compile(source);
-    var searchData = responseSearch.data.results;
-    var displayData = template(searchData);
-    $(".search__results__template__ul").append(displayData);
+      var source = $("#search__results__template__script").html();
+      var template = Handlebars.compile(source);
+      var searchData = responseSearch.data.results;
+      var displayData = template(searchData);
+      $(".search__results__template__ul").append(displayData);
     },
     beforeSend: function () {
-      $(".comic__search--list").prepend(
+      $(".search__results__template__ul").prepend(
         '<div class="loading"><img src="assets/img/ajax-loader.gif" alt="Loading" /></div>'
       );
     },
@@ -127,22 +121,6 @@ $(".comic__search").on("submit", function (e) {
 });
 
 ////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //////////// SINGLE CHARACTERS  AJAX ////////////
 $.ajax({
@@ -168,7 +146,7 @@ $.ajax({
       characterData[15],
       characterData[6],
       characterData[13],
-      characterData[5],
+      //characterData[5],
       characterData[17],
       characterData[3]
     ];
@@ -187,18 +165,6 @@ $.ajax({
   }
 });
 ////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////// MONTH AND WEEK COMICS  ///////////////
 
@@ -222,7 +188,7 @@ function callComicDates(paramDate) {
 
       var source = $("#comic__book__template").html();
       var template = Handlebars.compile(source);
-      var comicData = responseComics.data.results; 
+      var comicData = responseComics.data.results;
       var displayData = template(comicData);
       $(".comic__listings").append(displayData);
       //console.log(comicData);
@@ -242,10 +208,6 @@ function callComicDates(paramDate) {
 }
 ////////////////////////////////////////////////////////////
 
-
-
-
-
 ///////////////////////////// FOR WHEN PAGE LOADS////////////////////////////////////
 
 if ($("#week__new").is(":checked")) {
@@ -258,8 +220,6 @@ if ($("#week__new").is(":checked")) {
 
 ////////////////////////////////////////////////////////////
 
-
-
 ////////////////////// FOR WHEN TAB CLICKED ////////////////////////////
 $(".new__comics--ulist").on("click", function (e) {
   if ($(e.target).is("#week__new")) {
@@ -271,24 +231,6 @@ $(".new__comics--ulist").on("click", function (e) {
   }
 });
 ////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ///////////// RANDOM COMIC OF 2019 ///////////
 
@@ -332,7 +274,7 @@ function randomizeSpider() {
       var displayData = template(characterData);
       $(".randomize__ul").append(displayData);
 
-    //  console.log(randomIssueIs);
+      //  console.log(randomIssueIs);
     },
     beforeSend: function () {
       $(".randomize__ul").prepend(
@@ -357,16 +299,12 @@ $(".randomize__again").on("submit", function (e) {
   randomizeSpider();
 });
 
-
 ////////////////////////////////////////////////////////////
-
 
 ///////////////////////  FOOTER //////////////////////////
 
-
-$('.footer__area').children('p').html('Data provided by Marvel. © '+ y +' Marvel');
-
-
-
+$(".footer__area")
+  .children(".footer__area__marvel")
+  .html("Data provided by Marvel. © " + y + " Marvel");
 
 ////////////////////////////////////////////////////////////
