@@ -1,18 +1,33 @@
 {
-  "name": "spiderverse--pack--h",
+  "name": "unit10",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000j\u0000o\u0000s\u0000h\u0000u\u0000a\u0000-\u0000t\u0000r\u0000e\u0000e\u0000-\u0000c\u0000t\u0000r\u0000l\u0000.\u0000g\u0000i\u0000t\u0000h\u0000u\u0000b\u0000.\u0000i\u0000o\u0000\r\u0000 \u0000#\u0000 \u0000j\u0000o\u0000s\u0000h\u0000u\u0000a\u0000-\u0000t\u0000r\u0000e\u0000e\u0000-\u0000c\u0000t\u0000r\u0000l\u0000.\u0000g\u0000i\u0000t\u0000h\u0000u\u0000b\u0000.\u0000i\u0000o\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch assets/scss -o assets/css"
   },
-  "author": "",
+  "author": "joshua.tree.ctrl",
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "handlebars": "^4.4.0",
     "handlebars-intl": "^1.1.2",
     "jquery": "^3.4.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshua-tree-ctrl/joshua-tree-ctrl.github.io.git"
+  },
+  "keywords": [
+    "unit",
+    "10",
+    "final",
+    "project"
+  ],
+  "bugs": {
+    "url": "https://github.com/joshua-tree-ctrl/joshua-tree-ctrl.github.io/issues"
+  },
+  "homepage": "https://github.com/joshua-tree-ctrl/joshua-tree-ctrl.github.io#readme"
 }
