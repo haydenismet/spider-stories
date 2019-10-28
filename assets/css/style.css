@@ -253,8 +253,7 @@ body {
 .character__template__hb {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
+  flex-wrap: wrap; }
 
 .character__card {
   width: 20rem;

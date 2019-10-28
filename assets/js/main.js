@@ -1,7 +1,12 @@
 //////////////////////// GLOBALS ////////////////////////
 HandlebarsIntl.registerWith(Handlebars);
-var publicKey = config.MY_KEY;
-var privateKey = config.SECRET_KEY;
+//var publicKey = config.MY_KEY;
+//var privateKey = config.SECRET_KEY;
+
+var publicKey = '4d1d2b3e23717927e1ae35fb9dedb99b';
+var privateKey = 'f6011be74e9e0d6f79eed5a0ee24491ed5265146';
+
+
 var ts = new Date().getTime();
 var hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 var d = new Date();
