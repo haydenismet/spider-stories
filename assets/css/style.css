@@ -105,14 +105,20 @@ body {
   margin-top: 5rem; }
 
 .nav__section img {
-  width: 5%; }
+  width: 70%; }
 
 .nav__section {
   background-color: #282828;
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 3rem #a22d23;
+  border-style: double; }
+
+.home__logo {
+  display: flex;
+  justify-content: center; }
 
 .button__group {
   align-self: center; }
@@ -127,7 +133,7 @@ body {
 
 .comic__search__section {
   background-color: #a22d23;
-  height: 80vh;
+  height: 50vh;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
   display: flex;
   justify-content: center;

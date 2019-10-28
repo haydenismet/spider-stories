@@ -310,3 +310,6 @@ $(".footer__area")
   .html("Data provided by Marvel. © " + y + " Marvel");
 
 ////////////////////////////////////////////////////////////
+
+
+$('.character__card--info').corner("bevel brl 50px");
