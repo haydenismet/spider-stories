@@ -44,7 +44,7 @@ $(".comic__search").on("submit", function(e) {
 console.log($('.character__card__one').length);
  $('.character__card__one').remove();
   
-    var yearURL; //declare variables
+    var yearURL; 
     var url;
     var characterURL;
     var yearChoice = $(".years__options").val(); // store year chosen from dropdown toggle
