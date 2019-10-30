@@ -46,7 +46,7 @@ $(".search")
 $(".comic__search").on("submit", function(e) {
   e.preventDefault();
 
-console.log($('.character__card__one').length);
+ $('.comic__search--list').find('input').prop('checked', false);
  $('.character__card__one').remove();
   
     var yearURL; 
@@ -85,6 +85,9 @@ console.log($('.character__card__one').length);
       case "years":
         url = yearURL;
         break;
+        case undefined:
+          url = characterURL;
+          break;
       default:
         alert("Click the link first and FIX THIS!");
     }
@@ -317,4 +320,3 @@ $(".footer__area")
 ////////////////////////////////////////////////////////////
 
 
-$('.character__card--info').corner("bevel brl 50px");

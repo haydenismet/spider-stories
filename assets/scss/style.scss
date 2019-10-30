@@ -25,6 +25,10 @@ $red: #a22d23;
 $dark-red: #621913;
 $off-white: #f2f2f2;
 //////////////////////
+a:link,
+a:visited {
+  color: white;
+}
 
 ////// BODY STYLES //////
 *,
@@ -130,7 +134,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   cursor: pointer;
-  padding:2rem;
+  padding: 2rem;
 }
 
 .loading {
@@ -138,8 +142,6 @@ body {
   margin-bottom: 15rem;
   margin-top: 5rem;
 }
-
-
 
 ///////////////////////////
 
@@ -151,17 +153,17 @@ body {
 
 .nav__section {
   background-color: $grey;
-  
+
   display: flex;
   justify-content: center;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  border-bottom:3rem $red ;
-  border-style:double;
+  border-bottom: 3rem $red;
+  border-style: double;
 }
 .home__logo {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 .button__group {
   align-self: center;
@@ -288,16 +290,33 @@ body {
   margin-right: 3rem;
   display: flex;
   flex-direction: column;
- 
 
-  
   img {
     width: 100%;
   }
 
-  
+  a:link,
+  a:visited {
+    flex:1;
+    display: flex;
+    flex-direction:column;
+    text-decoration: none;
+    transition: .2s all;
+  }
+  a:hover {
+    color: $red;
+   
+    transform: translateY(-1rem);
+  }
+
+  a:active {
+    text-decoration: none;
+  }
 }
 
+.character__template__hb {
+  
+}
 //////////////////////////////////////
 
 .character__card__comic--info {
@@ -308,9 +327,9 @@ body {
   background-color: black;
   display: flex;
   flex-direction: row;
-  
 
   a {
+    background-color: $dark-red;
     align-self: flex-end;
     color: $white;
     letter-spacing: 0;
@@ -365,7 +384,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
- // justify-content: center;
+  // justify-content: center;
 }
 
 .character__template--link {
@@ -383,11 +402,10 @@ body {
     flex: 1;
     border-left: solid 1rem $red;
     padding: 1rem;
-    color: $white;
+    
     background-color: black;
 
     a {
-      color: $white;
       letter-spacing: 0;
       font-size: 1.2rem;
     }
@@ -406,38 +424,29 @@ body {
 
 ////// RANDOMIZE STYLES //////
 
-
-/////SORT SIZING //// 
+/////SORT SIZING ////
 
 .randomize {
-
-  
-
   &__again {
-
   }
-  
+
   &__ul {
     display: flex;
   }
 
-
   &__comic__whole {
-display:flex;
-    
+    display: flex;
   }
 
   &__image img {
-    
   }
 
   &__info {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    
+
     margin-left: 5rem;
-  
   }
 
   &__headings__group {
@@ -483,11 +492,9 @@ display:flex;
       font-size: 1.6rem;
       color: $white;
       font-weight: 600;
-      margin:2rem 2rem 2rem 0;
+      margin: 2rem 2rem 2rem 0;
     }
   }
-
- 
 
   &__creators {
     display: flex;
@@ -497,43 +504,33 @@ display:flex;
     background-color: $white;
   }
 
-
   &__links__btns {
-    display:flex;
+    display: flex;
     justify-content: flex-start;
-    
+
     a:link,
     a:visited,
     a:hover,
     a:active {
-      text-decoration:none;
-    
+      text-decoration: none;
     }
   }
 
   &__link {
-    
     font-size: 1.6rem;
     background-color: $grey;
     color: $white;
     font-weight: 900;
     border: 0;
-    margin-right:2rem;
-
-    
+    margin-right: 2rem;
   }
 
-  
-
   &__btn {
-    
     font-size: 1.6rem;
     background-color: $red;
     color: $white;
     font-weight: 900;
     border: 0;
- 
-    
   }
 }
 
@@ -542,41 +539,37 @@ display:flex;
   margin-top: 5rem;
   background-color: $grey;
   padding: 5rem;
- 
 
   &__area {
-    display:flex;
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
-
-
 }
-
-
-
 
 ////// SEARCH RESULT STYLES //////
 .search__results__template__ul {
-  display:flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  justify-content:center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search__results--external {
-  display:flex;
-  text-align:center;
+  display: flex;
+  text-align: center;
   border-left: 1rem solid #a22d23;
   border-right: 1rem solid #a22d23;
-  padding:1rem;
-  color:$white;
-  flex-direction:column;
-  align-items:center;
-  background-color:$grey;
+  padding: 1rem;
+  color: $white;
+  flex-direction: column;
+  align-items: center;
+  background-color: $grey;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.4rem;
   font-size: 1.6rem;
-
 }
+
+
+

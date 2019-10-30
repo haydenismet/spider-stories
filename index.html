@@ -84,10 +84,11 @@ date section in comics?
 
   <section class="nav__section">
 
-    <a href="index.html" class="home__logo"><img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1570015610/es_es_web_uyuohm.png" alt="brand_logo"
-      class="logo"></a>
-    
-<!--
+    <a href="index.html" class="home__logo"><img
+        src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1570015610/es_es_web_uyuohm.png" alt="brand_logo"
+        class="logo"></a>
+
+    <!--
     <div class="button__group">
       <button class="btn btn__nav">
         Search
@@ -105,7 +106,7 @@ date section in comics?
         <div class="comic__search--radios">
           <ul class="comic__search--list">
             <li>
-              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters" >
+              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters">
               <label for="characters">Characters</label>
             </li>
             <li>
@@ -211,12 +212,13 @@ date section in comics?
 
       </div>
       <a href="https://www.marvel.com" class="search__results--end" target="_blank">
-      <div class="search__results--external">
-        
-        <p> Results are limited to 10. </p> <p>Discover more at marvel.com</p> 
-      
-      </div>
-    </a>
+        <div class="search__results--external">
+
+          <p> Results are limited to 10. </p>
+          <p>Discover more at marvel.com</p>
+
+        </div>
+      </a>
     </div>
 
   </section>
@@ -243,23 +245,18 @@ date section in comics?
 
 
     <div class="character__card__one">
-
+      <a href="{{urls.2.url}}" target="_blank" >
+        {{#unless urls.2.url}} 
+              <a href="http://marvel.com" target="_blank" > 
+              {{/unless}}
       <div class="character__card--img">  
-          <a href=" {{urls.2.url}}  " target="_blank" >
-
-              {{#unless urls.2.url}} 
-                    <a href=" http://marvel.com" target="_blank" > 
-                    {{/unless}}
+         
         <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-        alt="{{name}}">  </a>
+        alt="{{name}}">  
       </div>
 
       <div class="character__card--info">
-          <a href=" {{urls.2.url}}  " target="_blank" >
-
-              {{#unless urls.2.url}} 
-                    <a href=" http://marvel.com" target="_blank" > 
-                    {{/unless}}
+      
           
         <h6 class="sixth__heading"> {{name}}  </h6>
 
@@ -268,11 +265,12 @@ date section in comics?
       </div>
 
       </div>
-      </a>
+    </a>
       {{/each}}
+
     </script>
       </ul>
-      </div>
+    </div>
   </section>
 
   <section class="new__comics">
@@ -367,11 +365,11 @@ date section in comics?
     <div class="row">
       <div class="footer__area">
         <p class="footer__area__marvel"> </p>
-        <p>  Made by <a href="google.com">joshua.tree.ctrl</a> </p>
-      
+        <p> Made by <a href="google.com">joshua.tree.ctrl</a> </p>
+
       </div>
       <p>This is a personal project as part of a learning course. </p>
-    
+
     </div>
   </section>
 
@@ -380,8 +378,8 @@ date section in comics?
   <script src="assets/js/config.js" type="text/javascript"></script>
   <script src="node_modules/crypto-js/crypto-js.js" type="text/javascript"></script>
   <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
-  <script src="joshua-tree-ctrl.github.io/node_modules/handlebars-intl/dist/handlebars-intl.min.js" type="text/javascript"></script>
-  <script src="joshua-tree-ctrl.github.io/assets/js/main.js" type="text/javascript"></script>
+  <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js" type="text/javascript"></script>
+  <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
 
 </html>

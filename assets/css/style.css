@@ -16,6 +16,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 1.6rem = 16px
 */
+a:link,
+a:visited {
+  color: white; }
+
 *,
 *::after,
 *::before {
@@ -212,6 +216,18 @@ body {
   flex-direction: column; }
   .character__card__one img {
     width: 100%; }
+  .character__card__one a:link,
+  .character__card__one a:visited {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: .2s all; }
+  .character__card__one a:hover {
+    color: #a22d23;
+    transform: translateY(-1rem); }
+  .character__card__one a:active {
+    text-decoration: none; }
 
 .character__card__comic--info {
   flex: 1;
@@ -222,6 +238,7 @@ body {
   display: flex;
   flex-direction: row; }
   .character__card__comic--info a {
+    background-color: #621913;
     align-self: flex-end;
     color: #ffffff;
     letter-spacing: 0;
@@ -266,10 +283,8 @@ body {
     flex: 1;
     border-left: solid 1rem #a22d23;
     padding: 1rem;
-    color: #ffffff;
     background-color: black; }
     .character__card--info a {
-      color: #ffffff;
       letter-spacing: 0;
       font-size: 1.2rem; }
   .character__card img {
