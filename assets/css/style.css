@@ -58,6 +58,18 @@ body {
   max-width: 120rem;
   margin: auto; }
 
+.home__logo {
+  text-decoration: none; }
+
+.wordmark__logo {
+  color: #ffffff;
+  background-color: #621913;
+  border: 0.6rem solid #a22d23;
+  padding: 1rem 2rem 1rem 2rem;
+  font-weight: 700;
+  border-radius: 200rem;
+  font-size: 4rem; }
+
 .primary__heading {
   font-size: 1.8rem;
   display: inline-flex;
@@ -144,6 +156,17 @@ body {
   align-items: center;
   margin-bottom: 5rem; }
 
+/* 
+.comic__search__section:before {
+  content: "\f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717";
+  z-index:300;
+  font-family:'Font Awesome 5 Pro';
+  font-weight:900;
+  font-size:5rem;
+  color:white;
+  opacity:.2;
+  
+} */
 .comic__search {
   color: #ffffff;
   text-align: center;

@@ -87,6 +87,25 @@ body {
   //greyed out if using flexbox test for search section
 }
 
+.home__logo {
+  
+    text-decoration:none;
+ 
+}
+
+
+.wordmark__logo {
+  color:$white;
+  background-color:$dark-red;
+  border:.6rem solid $red;
+  padding:1rem 2rem 1rem 2rem;
+  font-weight:700;
+  border-radius:200rem;
+ font-size:4rem;
+
+  
+}
+
 .primary__heading {
   font-size: 1.8rem;
   display: inline-flex;
@@ -191,7 +210,20 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  
 }
+
+/* 
+.comic__search__section:before {
+  content: "\f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717";
+  z-index:300;
+  font-family:'Font Awesome 5 Pro';
+  font-weight:900;
+  font-size:5rem;
+  color:white;
+  opacity:.2;
+  
+} */
 
 .comic__search {
   color: $white;
