@@ -284,7 +284,7 @@ function randomizeSpider() {
       var displayData = template(characterData);
       $(".randomize__ul").append(displayData);
 
-      //  console.log(randomIssueIs);
+        console.log(randomIssueIs);
     },
     beforeSend: function() {
       $(".randomize__ul").prepend(

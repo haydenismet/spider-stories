@@ -296,7 +296,7 @@ date section in comics?
         </div>
         <div class="character__card__comic--info">
           <h6 class="sixth__heading"> {{title}}  </h6>
-       <!-- <p class="character__card--p"> {{formatDate dates.0.date day="numeric" month="short" }}</p>   --> 
+       
         <a href="{{urls.0.url}}" target="_blank"> more</a> 
         </div>
         </div>
@@ -314,8 +314,8 @@ date section in comics?
 
           <script id="comic__book__randomize__template" type="text/x-handlebars-template">
           <div class="randomize__comic__whole">
-        <div class="randomize__image"><img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{title}}">
-          <!--dynamic alt tag?-->
+        <div class="randomize__image"><img src="{{thumbnail.path}}/detail.{{thumbnail.extension}}" alt="{{title}}">
+         
         </div>
         <div class="randomize__info">
           
@@ -330,17 +330,17 @@ date section in comics?
         
         <div class="randomize__triple__items">
           
-          <p>Format : {{format}}</p>
-        <p> Cost : ${{prices.0.price}} </p>
-        <p>Pages : {{pageCount}}</p>  
-        <p>Characters : {{characters.returned}}</p>
-         <P> Variants :
-           {{#if variants}}  {{variants.length}} 
+        <p> {{format}} Format </p>  
+      <p> ${{prices.0.price}} </p>  
+        <p>{{pageCount}}  PAGES </p>  
+          <p> {{characters.returned}} Character(s) </p>   
+         <P> 
+           {{#if variants}}    {{variants.length}} Variant(s)
            {{/if}}
            {{#unless variants}}
-           NO </p>
+           NO VARIANTS </p>
            {{/unless}}
-       <p>Contributors : {{creators.returned}}</p>
+       <p>{{creators.returned}} Contributors </p>
       
        
         </div>

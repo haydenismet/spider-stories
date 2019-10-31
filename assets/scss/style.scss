@@ -134,7 +134,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   cursor: pointer;
-  padding: 2rem;
+  padding:1.5rem 3rem 1.5rem 3rem;
 }
 
 .loading {
@@ -327,13 +327,22 @@ body {
   background-color: black;
   display: flex;
   flex-direction: row;
+  
 
-  a {
-    background-color: $dark-red;
+  a:link,a:visited {
+    
+    padding:.5rem;
+   text-decoration: none;
+    border:.2rem solid white;
     align-self: flex-end;
     color: $white;
     letter-spacing: 0;
     font-size: 1.2rem;
+    transition:.3s all;
+  }
+
+  a:hover {
+    background-color:$red;
   }
 }
 
@@ -439,13 +448,13 @@ body {
   }
 
   &__image img {
+   width:100%;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     margin-left: 5rem;
   }
 
@@ -454,47 +463,52 @@ body {
   }
 
   &__issue {
-    font-size: 4rem;
+    
     background-color: $red;
     font-weight: 700;
     color: $white;
-    align-self: flex-start;
     padding: 2rem;
     margin-right: 3rem;
-    border-left: 1rem solid $grey;
+    font-size:3rem;
+    border-radius:100rem;
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size:2rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     color: $randomize-grey;
+  
   }
 
   &__date {
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   &__triple__items {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-
-    align-items: flex-start;
+ text-align:center;
+    
 
     p {
+     
       text-transform: uppercase;
-      letter-spacing: 0.2rem;
+      letter-spacing: 0.5rem;
       padding: 1.6rem 2rem 1.6rem 2rem;
       background-color: $grey;
       font-size: 1.6rem;
       color: $white;
       font-weight: 600;
-      margin: 2rem 2rem 2rem 0;
+      margin: 2rem 1rem 2rem 0;
+      
     }
   }
+
+  /* 
 
   &__creators {
     display: flex;
@@ -502,35 +516,54 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-color: $white;
-  }
+  } */ 
 
   &__links__btns {
     display: flex;
-    justify-content: flex-start;
-
+    justify-content: center;
+    font-size:1.6rem;
+ 
+    
+    
     a:link,
-    a:visited,
+    a:visited {
+     
+      text-decoration: none;
+      transition:.3s all;
+
+    }
     a:hover,
     a:active {
+  
+      background-color:$grey;
       text-decoration: none;
     }
   }
 
   &__link {
-    font-size: 1.6rem;
-    background-color: $grey;
+    
+    background-color: $randomize-grey;
     color: $white;
     font-weight: 900;
     border: 0;
     margin-right: 2rem;
+   
   }
 
   &__btn {
-    font-size: 1.6rem;
+  
+  font-size:1.6rem;
     background-color: $red;
     color: $white;
     font-weight: 900;
     border: 0;
+    transition:.3s all;
+
+    
+    &:hover {
+      
+      background-color:$dark-red;
+    }
   }
 }
 
