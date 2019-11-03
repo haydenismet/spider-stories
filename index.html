@@ -78,7 +78,7 @@ date section in comics?
   <title>Every Story, Every Spider</title>
   <script src="https://kit.fontawesome.com/1198a80a23.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
@@ -87,10 +87,11 @@ date section in comics?
   <section class="nav__section">
 
     <a href="index.html" class="home__logo">
-      <div class="wordmark__logo"><i class="fas fa-spider"></i></div> 
+      <div class="wordmark__logo">SPIDEY <i class="fas fa-spider"></i></div>
       <!-- <img
         src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1570015610/es_es_web_uyuohm.png" alt="brand_logo"
-        class="logo"> --> </a>
+        class="logo"> -->
+    </a>
 
     <!--
     <div class="button__group">
@@ -175,27 +176,23 @@ date section in comics?
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-            <a href="{{urls.0.url}}"  target="_blank" >
+      
+            <div class="character__card__one">
+              <a href="{{urls.0.url}}"  target="_blank" >
 
                 {{#unless urls.0.url}} 
                       <a href=" http://marvel.com" target="_blank" > 
                       {{/unless}}
             
-            <div class="character__card__one">
-
                 <div class="character__card--img">  
           
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
                    alt="{{name}}"> 
-                </div> </a>
+                </div> 
           
                 <div class="character__card--info">
                   
-                    <a href=" {{urls.0.url}}  " target="_blank" >
-
-                            {{#unless urls.0.url}}
-                              <a href="https://www.marvel.com" target="_blank" > 
-                              {{/unless}}
+                   
 
 
 
@@ -203,26 +200,40 @@ date section in comics?
                   {{#unless name}}
                  <h6 class="sixth__heading">{{title}}</h6> 
                   {{/unless}}
-                                </a>
+                                
               
                 </div>
           
                 </div>
-                </a>
+              </a>
                 {{/each}}
-               
+             
             </script>
         </ul>
 
       </div>
-      <a href="https://www.marvel.com" class="search__results--end" target="_blank">
-        <div class="search__results--external">
 
-          <p> Results are limited to 10. </p>
-          <p>Discover more at marvel.com</p>
+      <div class="search__links">
+        <a href="https://www.marvel.com" class="search__results--end" target="_blank">
+         
+            
+            <p>Discover more at marvel.com</p>
+          
+        </a>
 
-        </div>
-      </a>
+
+        <a href="index.html" class="search__results--end" >
+          
+            <p> Home </p>
+       
+        </a>
+
+        <button class="btn search__results--end" id="searchScroll">  Search again </button>
+        
+          
+      
+        
+      </div>
     </div>
 
   </section>

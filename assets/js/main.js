@@ -134,6 +134,16 @@ $(".comic__search").on("submit", function(e) {
 
 ////////////////////////////////////////////////////////////
 
+
+//////////SEARCH BUTTON SCROLL TO TOP ////////////
+$('.search__links').on('click',  '#searchScroll', function(e){
+  e.preventDefault();
+  $('html, body').animate({
+    scrollTop: ($('.nav__section').offset().top)
+  },1000);
+  })
+  ////////////////////////////////////////////////////////////
+
 //////////// SINGLE CHARACTERS  AJAX ////////////
 $.ajax({
   type: "GET",
@@ -318,5 +328,4 @@ $(".footer__area")
   .html("Data provided by Marvel. © " + y + " Marvel");
 
 ////////////////////////////////////////////////////////////
-
 

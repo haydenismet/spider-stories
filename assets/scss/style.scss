@@ -96,13 +96,13 @@ body {
 
 .wordmark__logo {
   color:$white;
-  background-color:$dark-red;
-  border:.6rem solid $red;
-  padding:1rem 2rem 1rem 2rem;
-  font-weight:700;
-  border-radius:200rem;
- font-size:4rem;
 
+ 
+  padding:1rem 2rem 1rem 2rem;
+  font-weight:900;
+letter-spacing:1rem;
+ font-size:3rem;
+border:.5rem solid $white;
   
 }
 
@@ -620,20 +620,52 @@ body {
   justify-content: center;
 }
 
-.search__results--external {
-  display: flex;
-  text-align: center;
-  border-left: 1rem solid #a22d23;
-  border-right: 1rem solid #a22d23;
-  padding: 1rem;
-  color: $white;
-  flex-direction: column;
-  align-items: center;
-  background-color: $grey;
+#searchScroll {
+  font-size:1.4rem;
+  font-weight:600;
+
+  &:hover {
+    background-color:$dark-red;
+  }
+}
+
+.search__links {
+  display:flex;
+  justify-content:center;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.4rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  text-align:center;
+  letter-spacing: .3rem;
+
+  
+  
+  
+  
+  a:link,a:visited,a:hover,a:active {
+
+    text-decoration:none;
+
+
+    
+  }
+
+  a:hover {
+    background-color:$dark-red;
+  }
+ 
+}
+
+
+.search__results--end {
+
+ padding: 3rem;
+ color: $white;
+ background-color: $red;
+ margin-right:1rem;
+
+
+
 }
 
 
