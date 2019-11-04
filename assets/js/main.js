@@ -1,25 +1,31 @@
 //////////////////////// GLOBALS ////////////////////////
-HandlebarsIntl.registerWith(Handlebars);
-//var publicKey = config.MY_KEY;
-//var privateKey = config.SECRET_KEY;
+//var publicKey = config.MY_KEY; //for private config file.
+//var privateKey = config.SECRET_KEY; //for private config file.
+var publicKey = '4d1d2b3e23717927e1ae35fb9dedb99b'; // Public Key 
+var privateKey = 'f6011be74e9e0d6f79eed5a0ee24491ed5265146'; // Private Key 
+var ts = new Date().getTime(); // Generating date/time
+var hash = CryptoJS.MD5(ts + privateKey + publicKey).toString(); // Hashing with MD5 (js link), a combination of private and public key and time stamp in order for us to be able to correctly use the Marvel API key. 
 
-var publicKey = '4d1d2b3e23717927e1ae35fb9dedb99b';
-var privateKey = 'f6011be74e9e0d6f79eed5a0ee24491ed5265146';
+var d = new Date(); // Date
+var y = d.getFullYear(); // Year only retrieved from d variable
 
 
-var ts = new Date().getTime();
-var hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
-var d = new Date();
-var y = d.getFullYear();
-var searchSelect; //global variable to use further on in code
+var searchSelect; //Declaring global variable to use later on in code. searchSelect will be used in a switch case to determine what HTTP request to send to a single ajax; for example whether to send the characters HTTP URL or the year the user selected. It will also be used to toggle a hide/show of the years listing. 
+
 ////////////////////////////////////////////////////////////
 
-////////////////// CLICK EVENT - STORE RADIO BUTTON SELECTED - SHOW/HIDE YEARS  //////////////////
-$(".comic__search--list").on("click", "li", function() {
-  searchSelect = $(this)
-    .children()
-    .val();
+/////////////////// REGISTERED HELPERS ////////////////
+HandlebarsIntl.registerWith(Handlebars);
+///////////////////////////////////////////////////////
 
+
+////////////////// CLICK EVENT - STORE RADIO BUTTON SELECTED - SHOW/HIDE YEARS  //////////////////
+$(".comic__search--list").on("click", "li", function() { 
+  // CLICK Event, with added event delegation for list items. There are two list items. 
+
+  searchSelect = $(this).children().val(); // For (this) list item, find the children of this list item,  (input and label), and find the VAL (value of the input).
+
+  //Toggle the hide/show of the years options 1990 - 2019 
   if (searchSelect === "years") {
     $(".years__options").show();
   } else if (searchSelect === "characters") {
@@ -28,7 +34,7 @@ $(".comic__search--list").on("click", "li", function() {
 });
 ////////////////////////////////////////////////////////////
 
-////////////////// HIDE SEARCH HTML PRE-SUBMIT OF SEARCH DATA //////////////////
+////////////////// HIDE NON-DYNAMIC SEARCH HEADER/FOOTER PRE-SEARCH SUBMIT //////////////////
 
 $(".search")
   .children()
@@ -43,19 +49,21 @@ $(".search")
 
 ///////////////// SEARCH FUNCTION  ////////////////////////////
 
-$(".comic__search").on("submit", function(e) {
-  e.preventDefault();
+$(".comic__search").on("submit", function(e) { 
+  // ON SUBMIT
+  e.preventDefault(); // Prevent default submit action/behaviour
 
- $('.comic__search--list').find('input').prop('checked', false);
- $('.character__card__one').remove();
+ $('.comic__search--list').find('input').prop('checked', false);//Find all inputs that have been clicked and deselect them on submit so its a blank start when they go to search again (no checked boxes)
+
+ $('.character__card__one').remove(); // Remove pre-existing content from the page so that we can add the new search content 
   
-    var yearURL; 
-    var url;
-    var characterURL;
-    var yearChoice = $(".years__options").val(); // store year chosen from dropdown toggle
+    var url; //Declaring 
+    var yearChoice = $(".years__options").val(); 
+  // Store year chosen from dropdown toggle in variable for later use on submit
 
-    //URL for character selected to be used
-    characterURL =
+
+    //Setting character HTTP request link
+   var characterURL =
       "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=Spider-&orderBy=-name&limit=10" +
       "&ts=" +
       ts +
@@ -64,8 +72,8 @@ $(".comic__search").on("submit", function(e) {
       "&hash=" +
       hash;
 
-    //URL for year selected to be used */
-    yearURL =
+    //Setting year HTTP request link from user input
+  var  yearURL =
       "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=true&dateRange=" +
       yearChoice +
       "-01-01%2C%20" +
@@ -78,6 +86,8 @@ $(".comic__search").on("submit", function(e) {
       "&hash=" +
       hash;
 
+
+    //Switch case taking the searchSelect variable parameter. If this is equal to characters case, set the url variable to characterURL, if it's years, set it to yearURL. If undefined, go to default as characterURL HTTP link request. This checks on SUBMIT (this is in the submit function) as by this point the user has settled on a decision. 
     switch (searchSelect) {
       case "characters":
         url = characterURL;
@@ -89,10 +99,10 @@ $(".comic__search").on("submit", function(e) {
           url = characterURL;
           break;
       default:
-        alert("Click the link first and FIX THIS!");
+        alert("Select an option, Characters or Year");
     }
 
-    //Fetching api data
+    //AJAX fetch
     $.ajax({
       type: "GET",
       url: url,

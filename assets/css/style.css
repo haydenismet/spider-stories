@@ -420,7 +420,8 @@ body {
 
 #searchScroll {
   font-size: 1.4rem;
-  font-weight: 600; }
+  font-weight: 600;
+  border: 0; }
   #searchScroll:hover {
     background-color: #621913; }
 
