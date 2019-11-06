@@ -59,14 +59,14 @@ $(".search")
 
 
 ////////////////// CLICK EVENT - STORE RADIO BUTTON SELECTED VALUE INTO VAR - SHOW/HIDE YEARS  //////////////////
-$(".comic__search--list").on("click", "li", function() { 
+$(".comic__search__list").on("click", "li", function() { 
   // CLICK Event, with added event delegation for list items. There are two list items. 
   searchSelect = $(this).children().val(); // For (this) list item, find the children of this list item,  (input and label), and find the VAL (value of the input).
   //Toggle the hide/show of the years options 1990 - 2019 
   if (searchSelect === "years") {
-    $(".years__options").show();
+    $(".comic__search__years__options").show();
   } else if (searchSelect === "characters") {
-    $(".years__options").hide();
+    $(".comic__search__years__options").hide();
   }
 });
 /////////////////////////////////////////////////////////////////////////////////////////////

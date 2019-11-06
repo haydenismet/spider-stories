@@ -41,40 +41,32 @@ LIST TECHNOLOGIES USED?
   <title>Every Story, Every Spider</title>
   <script src="https://kit.fontawesome.com/1198a80a23.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
-
 <body>
 
   <section class="nav__section">
-
-    <a href="index.html" class="home__logo">
-      <div class="wordmark__logo">SPIDEY <i class="fas fa-spider"></i></div>
-      <!-- <img
-        src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1570015610/es_es_web_uyuohm.png" alt="brand_logo"
-        class="logo"> -->
+    <a href="index.html" class="nav__logo">
+      <div class="nav__wordmark__logo">SPIDEY <i class="fas fa-spider"></i></div>
     </a>
-
   </section>
 
   <section class="comic__search__section">
     <div class="row">
       <form class="comic__search">
-        <h2 class="comic__search--heading"> SHOW ME </h2>
-        <div class="comic__search--radios">
-          <ul class="comic__search--list">
+        <h2 class="comic__search__heading"> SHOW ME </h2>
+        <div class="comic__search__radios">
+          <ul class="comic__search__list">
             <li>
-              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters">
+              <input type="radio" id="characters" class="comic__search__radio__tab" name="skills" value="characters">
               <label for="characters">Characters</label>
             </li>
             <li>
-              <input type="radio" id="years" class="comic--radio" name="skills" value="years">
+              <input type="radio" id="years" class="comic__search__radio__tab" name="skills" value="years">
               <label for="years">Years</label>
             </li>
 
-
-            <select name="years__chosen" class="years__options">
+            <select name="comic__search__years__chosen" class="comic__search__years__options">
               <option value="1990">1990</option>
               <option value="1991">1991</option>
               <option value="1992">1992</option>
@@ -105,81 +97,51 @@ LIST TECHNOLOGIES USED?
               <option value="2017">2017</option>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
-
             </select>
-
-
-
         </div>
         </ul>
-        <input class="comic__search--submit" type="submit" value="GO">
+        <input class="comic__search__submit" type="submit" value="GO">
       </form>
     </div>
   </section>
 
 
   <section class="search">
-
     <div class="row">
-
       <h1 class="primary__heading">Search Results</h1>
-
       <div class="search__results">
-
-
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-      
             <div class="character__card__one">
               <a href="{{urls.0.url}}"  target="_blank" >
-
                 {{#unless urls.0.url}} 
                       <a href=" http://marvel.com" target="_blank" > 
                       {{/unless}}
-            
                 <div class="character__card--img">  
-          
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
                    alt="{{name}}"> 
                 </div> 
-          
                 <div class="character__card--info">
-                  
-                   
-
-
-
                     <h6 class="sixth__heading"> {{name}}  </h6>
                   {{#unless name}}
                  <h6 class="sixth__heading">{{title}}</h6> 
                   {{/unless}}
-                                
-              
                 </div>
-          
                 </div>
               </a>
                 {{/each}}
-             
             </script>
         </ul>
-
       </div>
 
+
       <div class="search__links">
-        <a href="https://www.marvel.com" class="search__results--end" target="_blank">
-         
-            
+        <a href="https://www.marvel.com" class="search__results--end" target="_blank">      
             <p>Discover more at marvel.com</p>
-          
         </a>
-
-
         <a href="index.html" class="search__results--end" >
-          
             <p> Home </p>
-       
         </a>
 
         <button class="btn search__results--end" id="searchScroll">  Search again </button>

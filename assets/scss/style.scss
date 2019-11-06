@@ -11,24 +11,24 @@ $breakpoint arguement choices:
 - tab-land
 - big-desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
-
 1em = 16px
 1.6rem = 16px
 */
 
-////// VARIABLES //////
+
+
+////// VARIABLES ////////
 $randomize-grey: #424242;
 $grey: #282828;
 $white: #ffffff;
 $red: #a22d23;
 $dark-red: #621913;
 $off-white: #f2f2f2;
-//////////////////////
-a:link,
-a:visited {
-  color: white;
-}
+////////////////////////
+
+
+
+
 
 ////// BODY STYLES //////
 *,
@@ -79,31 +79,14 @@ body {
 
 ////// GLOBAL STYLES //////
 
+a:link,
+a:visited {
+  color: white;
+}
+
 .row {
   max-width: 120rem;
   margin: auto;
-  //margin auto to center div left/right  so row is center.
-  //add margin to sections where you want spacing.
-  //greyed out if using flexbox test for search section
-}
-
-.home__logo {
-  
-    text-decoration:none;
- 
-}
-
-
-.wordmark__logo {
-  color:$white;
-
- 
-  padding:1rem 2rem 1rem 2rem;
-  font-weight:900;
-letter-spacing:1rem;
- font-size:3rem;
-border:.5rem solid $white;
-  
 }
 
 .primary__heading {
@@ -166,36 +149,27 @@ border:.5rem solid $white;
 
 ////// NAV STYLES //////
 
-.nav__section img {
-  width: 70%;
-}
-
 .nav__section {
   background-color: $grey;
-
   display: flex;
   justify-content: center;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  border-bottom: 3rem $red;
-  border-style: double;
-}
-.home__logo {
-  display: flex;
-  justify-content: center;
-}
-.button__group {
-  align-self: center;
 }
 
-.btn__nav {
-  color: $grey;
-  background-color: $white;
-  font-size: 1.2rem;
-  padding: 1.3rem;
-  border-style: none;
-  margin-right: 1.6rem;
+.nav__logo {
+  text-decoration:none;
 }
+
+.nav__wordmark__logo {
+color:$white;
+padding:1rem 2rem 1rem 2rem;
+font-weight:900;
+letter-spacing:1rem;
+font-size:3rem;
+border:.5rem solid $white;
+}
+
 
 ///////////////////////////
 
@@ -203,8 +177,7 @@ border:.5rem solid $white;
 
 .comic__search__section {
   background-color: $red;
-  height: 50vh; //make relative to VH?
-  //margin-top:-2.2rem;
+  height: 50vh; 
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
   display: flex;
   justify-content: center;
@@ -213,22 +186,17 @@ border:.5rem solid $white;
   
 }
 
-/* 
-.comic__search__section:before {
-  content: "\f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717";
-  z-index:300;
-  font-family:'Font Awesome 5 Pro';
-  font-weight:900;
-  font-size:5rem;
-  color:white;
-  opacity:.2;
-  
-} */
-
 .comic__search {
   color: $white;
   text-align: center;
   margin-bottom: 10rem;
+
+  &__heading {
+    font-weight: 800;
+    letter-spacing: 1.8rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
 
   input[type="radio"] {
     display: none;
@@ -245,22 +213,7 @@ border:.5rem solid $white;
     background-color: $dark-red;
   }
 
-  &--heading {
-    font-weight: 800;
-    letter-spacing: 1.8rem;
-    margin-bottom: 2rem;
-    font-size: 4rem;
-  }
-
-  &--radios {
-    //background-color: red;
-
-    li {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &--list {
+  &__list {
     list-style-type: none;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
@@ -268,7 +221,31 @@ border:.5rem solid $white;
     font-size: 2rem;
   }
 
-  &--submit {
+  &__radios {
+    li {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__radio__tab {
+    cursor: pointer;
+  }
+
+  &__years__options {
+    display: none;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    background-color: $dark-red;
+    border-style: none;
+    padding: 1rem;
+    color: $white;
+    margin-bottom: 2rem;
+  }
+
+  &__submit {
     color: $grey;
     padding: 1rem;
     font-size: 2.5rem;
@@ -281,37 +258,71 @@ border:.5rem solid $white;
   }
 }
 
-.comic--radio {
-  cursor: pointer;
+
+/////////////// SEARCH RESULT STYLES //////////////
+
+.search__results__template__ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.year__container select {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0;
-}
-.years__options {
-  display: none;
-}
-
-.years__options {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.5rem;
-  background-color: $dark-red;
-  border-style: none;
-  padding: 1rem;
-  color: $white;
-  margin-bottom: 2rem;
+#searchScroll {
+  font-size:1.4rem;
+  font-weight:600;
+  border:0;
+  
+  &:hover {
+    background-color:$dark-red;
+  }
 }
 
-.yearContainer {
-  text-align: center;
+.search__links {
+  display:flex;
+  justify-content:center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align:center;
+  letter-spacing: .3rem;
+
+  
+  
+  
+  
+  a:link,a:visited,a:hover,a:active {
+
+    text-decoration:none;
+
+
+    
+  }
+
+  a:hover {
+    background-color:$dark-red;
+  }
+ 
 }
 
-////// CHARACTER STYLES //////
+
+.search__results--end {
+
+ padding: 3rem;
+ color: $white;
+ background-color: $red;
+ margin-right:1rem;
+
+
+
+}
+
+
+////////////////////////////////////////////////
+
+
+
+//////////////// CHARACTER STYLES ///////////////
 
 //////// SINGLE CHARACTERS //////////
 
@@ -610,63 +621,6 @@ border:.5rem solid $white;
     flex-direction: row;
     justify-content: space-between;
   }
-}
-
-////// SEARCH RESULT STYLES //////
-.search__results__template__ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#searchScroll {
-  font-size:1.4rem;
-  font-weight:600;
-  border:0;
-  
-  &:hover {
-    background-color:$dark-red;
-  }
-}
-
-.search__links {
-  display:flex;
-  justify-content:center;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-align:center;
-  letter-spacing: .3rem;
-
-  
-  
-  
-  
-  a:link,a:visited,a:hover,a:active {
-
-    text-decoration:none;
-
-
-    
-  }
-
-  a:hover {
-    background-color:$dark-red;
-  }
- 
-}
-
-
-.search__results--end {
-
- padding: 3rem;
- color: $white;
- background-color: $red;
- margin-right:1rem;
-
-
-
 }
 
 
