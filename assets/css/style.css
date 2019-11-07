@@ -190,13 +190,6 @@ a:visited {
   flex-wrap: wrap;
   justify-content: center; }
 
-#searchScroll {
-  font-size: 1.4rem;
-  font-weight: 600;
-  border: 0; }
-  #searchScroll:hover {
-    background-color: #621913; }
-
 .search__links {
   display: flex;
   justify-content: center;
@@ -210,7 +203,14 @@ a:visited {
   .search__links a:hover {
     background-color: #621913; }
 
-.search__results--end {
+#search__results__scroll {
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 0; }
+  #search__results__scroll:hover {
+    background-color: #621913; }
+
+.search__results__end {
   padding: 3rem;
   color: #ffffff;
   background-color: #a22d23;

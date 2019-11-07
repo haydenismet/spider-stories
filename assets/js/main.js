@@ -43,13 +43,13 @@ HandlebarsIntl.registerWith(Handlebars);
 
 
 //////////////////////// HIDE NON-DYNAMIC SEARCH CONTENT HEADER/CTAS  ////////////////////////
-$(".search")
+$(".search__results__section")
   .children()
   .children(".primary__heading")
   .hide();
 
-$(".search")
-  .find(".search__results--end")
+$(".search__results__section")
+  .find(".search__results__end")
   .hide();
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -88,12 +88,12 @@ $(".comic__search__list").on("click", "li", function() {
 $(".comic__search").on("submit", function(e) {
   // ON SUBMIT
   e.preventDefault(); // Prevent default submit action/behaviour
-  $(".comic__search--list")
+  $(".comic__search__list")
     .find("input")
     .prop("checked", false); //Find all inputs that have been clicked and deselect them on submit so its a blank start when they go to search again (no checked boxes)
   $(".character__card__one").remove(); // Remove pre-existing content from the page so that we can add the new search content
   var url; //Declaring
-  var yearChoice = $(".years__options").val();
+  var yearChoice = $(".comic__search__years__options").val();
   // Store year chosen from dropdown toggle in variable for later use on submit
   //Setting character HTTP request link
   var characterURL =
@@ -143,8 +143,8 @@ $(".comic__search").on("submit", function(e) {
         .children()
         .remove(".loading"); //On successful retrieval of data, remove the loading class (spinny)
 
-      $(".search__results--end").show(); // Show class which will contain static HTML content for the search (ie links, headers)
-      $(".search")
+      $(".search__results__end").show(); // Show class which will contain static HTML content for the search (ie links, headers)
+      $(".search__results__section")
         .children()
         .children(".primary__heading")
         .show(); // Show class which will contain static HTML content for the search (ie links, headers)
@@ -189,7 +189,7 @@ $(".comic__search").on("submit", function(e) {
 
 
 ////////////////////////////////// SCROLL TO TOP SEARCH ///////////////////////////////////////////
-$('.search__links').on('click', '#searchScroll', function (e) {
+$('.search__links').on('click', '#search__results__scroll', function (e) {
   //On click of this button - event delegation as it is initially hidden, so #searchScroll.
   e.preventDefault(); //Prevent default behaviour
   // Select HTML and body, animate the scroll within the html/body to scrollTop, to the nav section by class .nav__section. 1000 is anim speed. 
