@@ -43,6 +43,7 @@ LIST TECHNOLOGIES USED?
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
+
 <body>
 
   <section class="nav__section">
@@ -65,7 +66,6 @@ LIST TECHNOLOGIES USED?
               <input type="radio" id="years" class="comic__search__radio__tab" name="skills" value="years">
               <label for="years">Years</label>
             </li>
-
             <select name="comic__search__years__chosen" class="comic__search__years__options">
               <option value="1990">1990</option>
               <option value="1991">1991</option>
@@ -135,28 +135,17 @@ LIST TECHNOLOGIES USED?
         </ul>
       </div>
 
-
       <div class="search__links">
-        <a href="https://www.marvel.com" class="search__results__end" target="_blank">      
-            <p>Discover more at marvel.com</p>
+        <a href="https://www.marvel.com" class="search__results__end" target="_blank">
+          <p>Discover more at marvel.com</p>
         </a>
-        <a href="index.html" class="search__results__end" >
-            <p> Home </p>
+        <a href="index.html" class="search__results__end">
+          <p> Home </p>
         </a>
-
-        <button class="btn search__results__end" id="search__results__scroll">  Search again </button>
-        
-          
-      
-        
+        <button class="btn search__results__end" id="search__results__scroll"> Search again </button>
       </div>
     </div>
-
   </section>
-
-
-
-
 
 
   <section class="characters">
@@ -167,39 +156,22 @@ LIST TECHNOLOGIES USED?
       <ul class="character__template__hb">
         <script id="character__template" type="text/x-handlebars-template">
           {{#each this}}
-
-      
-
-
-
-
-
-
     <div class="character__card__one">
-      <a href="{{urls.2.url}}" target="_blank" >
-        {{#unless urls.2.url}} 
-              <a href="http://marvel.com" target="_blank" > 
-              {{/unless}}
-      <div class="character__card__img">  
-         
-        <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-        alt="{{name}}">  
-      </div>
-
-      <div class="character__card--info">
-      
-          
-        <h6 class="sixth__heading"> {{name}}  </h6>
-
-      <p class="character__card--p"> {{ comics.available}} issues </p> 
-    
-      </div>
-
-      </div>
+      <a href="{{urls.2.url}}" target="_blank">
+        {{#unless urls.2.url}}
+        <a href="http://marvel.com" target="_blank">
+          {{/unless}}
+          <div class="character__card__img">
+            <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
+          </div>
+          <div class="character__card--info">
+            <h6 class="sixth__heading"> {{name}} </h6>
+            <p class="character__card--p"> {{ comics.available}} issues </p>
+          </div>
+    </div>
     </a>
-      {{/each}}
-
-    </script>
+          {{/each}}
+      </script>
       </ul>
     </div>
   </section>
@@ -244,7 +216,7 @@ LIST TECHNOLOGIES USED?
         <ul class="randomize__ul">
 
           <script id="comic__book__randomize__template" type="text/x-handlebars-template">
-          <div class="randomize__comic__whole">
+            <div class="randomize__comic__whole">
         <div class="randomize__image"><img src="{{thumbnail.path}}/detail.{{thumbnail.extension}}" alt="{{title}}">
          
         </div>
