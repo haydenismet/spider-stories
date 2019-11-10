@@ -135,7 +135,7 @@ a:visited {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   cursor: pointer;
-  padding:1.5rem 3rem 1.5rem 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
 }
 
 .loading {
@@ -157,38 +157,32 @@ a:visited {
 }
 
 .nav__logo {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .nav__wordmark__logo {
-color:$white;
-padding:1rem 2rem 1rem 2rem;
-font-weight:900;
-letter-spacing:1rem;
-font-size:3rem;
-border:.5rem solid $white;
+  color: $white;
+  padding: 1rem 2rem 1rem 2rem;
+  font-weight: 900;
+  letter-spacing: 1rem;
+  font-size: 3rem;
+  border: .5rem solid $white;
 }
 
 
-///////////////////////////
+////////////////////////////////
 
-////// SEARCH STYLES //////
+////////// SEARCH AREA /////////
 
-.comic__search__section {
+.search__area {
   background-color: $red;
-  height: 50vh; 
+  height: 50vh;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
-  
-}
 
-.comic__search {
-  color: $white;
-  text-align: center;
-  margin-bottom: 10rem;
 
   &__heading {
     font-weight: 800;
@@ -197,19 +191,28 @@ border:.5rem solid $white;
     font-size: 4rem;
   }
 
-  input[type="radio"] {
-    display: none;
-  }
-
-  input[type="radio"]:checked + label {
-    border: solid 0.3rem $white;
-  }
-
-  label {
-    display: block;
-    padding: 0.6rem;
+  &__form {
+    color: $white;
     text-align: center;
-    background-color: $dark-red;
+    margin-bottom: 10rem;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked+label {
+      border: solid 0.3rem $white;
+    }
+
+    label {
+      display: block;
+      padding: 0.6rem;
+      text-align: center;
+      background-color: $dark-red;
+      margin-bottom: 2rem;
+    }
+
+
   }
 
   &__list {
@@ -220,15 +223,6 @@ border:.5rem solid $white;
     font-size: 2rem;
   }
 
-  &__radios {
-    li {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__radio__tab {
-    cursor: pointer;
-  }
 
   &__years__options {
     display: none;
@@ -255,14 +249,19 @@ border:.5rem solid $white;
     width: 100%;
     cursor: pointer;
   }
+
 }
 
+////////////////////////////////
 
-/////////////// SEARCH RESULT STYLES //////////////
 
-.search__results__section {
-  
-}
+
+
+
+
+
+
+/////////////// SEARCH RESULTS  //////////////
 
 .search__results {
 
@@ -273,43 +272,52 @@ border:.5rem solid $white;
     justify-content: center;
   }
 
-}
+  &__links {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: .3rem;
 
-.search__links {
-  display:flex;
-  justify-content:center;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-align:center;
-  letter-spacing: .3rem;
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
 
-  a:link,a:visited,a:hover,a:active {
-    text-decoration:none;
+    a:hover {
+      background-color: $dark-red;
+    }
+
+    #search__results__scroll {
+      font-size: 1.4rem;
+      font-weight: 600;
+      border: 0;
+
+      &:hover {
+        background-color: $dark-red;
+      }
+    }
+
+
+
   }
-  a:hover {
-    background-color:$dark-red;
+
+  &__end {
+    padding: 3rem;
+    color: $white;
+    background-color: $red;
+    margin-right: 1rem;
   }
 
 }
 
-#search__results__scroll {
-  font-size:1.4rem;
-  font-weight:600;
-  border:0;
-  
-  &:hover {
-    background-color:$dark-red;
-  }
-}
 
 
-.search__results__end {
- padding: 3rem;
- color: $white;
- background-color: $red;
- margin-right:1rem;
-}
+
 
 
 ////////////////////////////////////////////////
@@ -321,87 +329,70 @@ border:.5rem solid $white;
 //////// SINGLE CHARACTERS //////////
 
 .characters {
-  
-}
 
-.character__card__one {
-  width: 20rem;
-  text-transform: uppercase;
-  margin-bottom: 5rem;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-
-  img {
-    width: 100%;
-  }
-
-  a:link,
-  a:visited {
-    flex:1;
+  &__template__ul {
     display: flex;
-    flex-direction:column;
-    text-decoration: none;
-    transition: .2s all;
-  }
-  a:hover {
-    color: $red;
-   
-    transform: translateY(-1rem);
   }
 
-  a:active {
-    text-decoration: none;
-  }
-}
-
-.character__template__hb {
-  
-}
-//////////////////////////////////////
-
-.character__card__comic--info {
-  flex: 1;
-  border-left: solid 1rem $red;
-  padding: 1rem;
-  color: $white;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  
-
-  a:link,a:visited {
-    
-    padding:.5rem;
-   text-decoration: none;
-    border:.2rem solid white;
-    align-self: flex-end;
-    color: $white;
-    letter-spacing: 0;
-    font-size: 1.2rem;
-    transition:.3s all;
-  }
-
-  a:hover {
-    background-color:$red;
-  }
-}
-
-///////////////////////////
-
-////// NEW COMICS STYLES //////
-
-.new__comics {
-  .comic__listings {
+  &__cards {
+    width: 20rem;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    margin-right: 3rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+  
     img {
       width: 100%;
     }
+  
+    &__info {
+      flex: 1;
+      border-left: solid 1rem $red;
+      padding: 1rem;
+      background-color: black;
+    }
+  
+    &__p {
+      font-size: 1.2rem;
+      letter-spacing: 0.5rem;
+    }
+  
+    a:link,
+    a:visited {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: .2s all;
+    }
+  
+    a:hover {
+      color: $red;
+      transform: translateY(-1rem);
+    }
+  
+    a:active {
+      text-decoration: none;
+    }
+   
   }
 
-  &--ulist {
+}
+
+
+
+
+
+//////////////////////////////////////
+
+
+
+//////////// COMICS  ///////////
+
+.comics {
+
+  &__tab {
     text-align: center;
     display: inline-flex;
     flex-direction: row;
@@ -416,7 +407,6 @@ border:.5rem solid $white;
 
     label {
       padding: 1.4rem;
-
       cursor: pointer;
     }
 
@@ -428,48 +418,61 @@ border:.5rem solid $white;
       }
     }
   }
-}
 
-.character__template__hb {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  // justify-content: center;
-}
-
-.character__template--link {
-}
-
-.character__card {
-  width: 20rem;
-  text-transform: uppercase;
-  margin-bottom: 5rem;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-
-  &--info {
-    flex: 1;
-    border-left: solid 1rem $red;
-    padding: 1rem;
+  &__listings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     
-    background-color: black;
-
-    a {
-      letter-spacing: 0;
-      font-size: 1.2rem;
+    img {
+      width: 100%;
     }
+    
   }
 
-  img {
-    width: 100%;
-  }
+  &__cards {
+    width: 20rem;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+  
+    img {
+      width: 100%;
+    }
+  
+    &__info {
+      flex: 1;
+      border-left: solid 1rem $red;
+      padding: 1rem;
+      background-color: black;
+      display: flex;
+      flex-direction: row;
+      color: $white;
+  
+      a:link,a:visited {
+    
+        padding:.5rem;
+       text-decoration: none;
+        border:.2rem solid white;
+        align-self: flex-end;
+        color: $white;
+        letter-spacing: 0;
+        font-size: 1.2rem;
+        transition:.3s all;
+      }
+    
+      a:hover {
+        background-color:$red;
+      }
+    }
 
-  &--p {
-    font-size: 1.2rem;
-    letter-spacing: 0.5rem;
   }
+  
 }
+
+
 /////////////////////
 
 ////// RANDOMIZE STYLES //////

@@ -50,21 +50,21 @@ LIST TECHNOLOGIES USED?
     </a>
   </section>
 
-  <section class="comic__search__section">
+  <section class="search__area">
     <div class="row">
-      <form class="comic__search">
-        <h2 class="comic__search__heading"> SHOW ME </h2>
-        <div class="comic__search__radios">
-          <ul class="comic__search__list">
+      <form class="search__area__form">
+        <h2 class="search__area__heading"> SHOW ME </h2>
+        <div class="search__area__radios">
+          <ul class="search__area__list">
             <li>
-              <input type="radio" id="characters" class="comic__search__radio__tab" name="skills" value="characters">
+              <input type="radio" id="characters" class="search__area__radio__tab" name="skills" value="characters">
               <label for="characters">Characters</label>
             </li>
             <li>
-              <input type="radio" id="years" class="comic__search__radio__tab" name="skills" value="years">
+              <input type="radio" id="years" class="search__area__radio__tab" name="skills" value="years">
               <label for="years">Years</label>
             </li>
-            <select name="comic__search__years__chosen" class="comic__search__years__options">
+            <select name="search__area__years__tab" class="search__area__years__options">
               <option value="1990">1990</option>
               <option value="1991">1991</option>
               <option value="1992">1992</option>
@@ -98,29 +98,29 @@ LIST TECHNOLOGIES USED?
             </select>
         </div>
         </ul>
-        <input class="comic__search__submit" type="submit" value="GO">
+        <input class="search__area__submit" type="submit" value="GO">
       </form>
     </div>
   </section>
 
 
-  <section class="search__results__section">
+  <section class="search__results">
     <div class="row">
       <h1 class="primary__heading">Search Results</h1>
-      <div class="search__results">
+      <div class="search__results__container">
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-            <div class="character__card__one">
+            <div class="characters__cards">
               <a href="{{urls.0.url}}"  target="_blank" >
                 {{#unless urls.0.url}} 
                       <a href=" http://marvel.com" target="_blank" > 
                       {{/unless}}
-                <div class="character__card--img">  
+                <div class="characters__cards__img">  
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
                    alt="{{name}}"> 
                 </div> 
-                <div class="character__card--info">
+                <div class="characters__cards__info">
                     <h6 class="sixth__heading"> {{name}}  </h6>
                   {{#unless name}}
                  <h6 class="sixth__heading">{{title}}</h6> 
@@ -129,11 +129,11 @@ LIST TECHNOLOGIES USED?
                 </div>
               </a>
                 {{/each}}
-            </script>
+          </script>
         </ul>
       </div>
 
-      <div class="search__links">
+      <div class="search__results__links">
         <a href="https://www.marvel.com" class="search__results__end" target="_blank">
           <p>Discover more at marvel.com</p>
         </a>
@@ -151,20 +151,20 @@ LIST TECHNOLOGIES USED?
       <h1 class="primary__heading">
         spider-verse characters
       </h1>
-      <ul class="character__template__hb">
-        <script id="character__template" type="text/x-handlebars-template">
+      <ul class="characters__template__ul">
+        <script id="characters__template" type="text/x-handlebars-template">
           {{#each this}}
-    <div class="character__card__one">
+    <div class="characters__cards">
       <a href="{{urls.2.url}}" target="_blank">
         {{#unless urls.2.url}}
         <a href="http://marvel.com" target="_blank">
           {{/unless}}
-          <div class="character__card__img">
+          <div class="characters__cards__img">
             <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
           </div>
-          <div class="character__card--info">
+          <div class="characters__cards__info">
             <h6 class="sixth__heading"> {{name}} </h6>
-            <p class="character__card--p"> {{ comics.available}} issues </p>
+            <p class="characters__cards__p"> {{ comics.available}} issues </p>
           </div>
     </div>
     </a>
@@ -174,11 +174,11 @@ LIST TECHNOLOGIES USED?
     </div>
   </section>
 
-  <section class="new__comics">
+  <section class="comics">
     <div class="row">
       <h1 class="primary__heading__tab">
         new spideys this:
-        <ul class="new__comics--ulist">
+        <ul class="comics__tab">
           <li> <input type="radio" id="week__new" class="comic--radio" name="input-setting" value="weeks"
               checked="checked">
             <label for="week__new"> WEEK</label> </li>
@@ -187,17 +187,18 @@ LIST TECHNOLOGIES USED?
           </li>
         </ul>
       </h1>
-      <ul class="comic__listings">
+
+
+      <ul class="comics__listings">
         <script id="comic__book__template" type="text/x-handlebars-template">
           {{#each this}}
-      <div class="character__card">
-        <div class="character__card--img">  
+      <div class="comics__cards">
+        <div class="comics__cards__img">  
           <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
           alt="{{title}}"> 
         </div>
-        <div class="character__card__comic--info">
+        <div class="comics__cards__info">
           <h6 class="sixth__heading"> {{title}}  </h6>
-       
         <a href="{{urls.0.url}}" target="_blank"> more</a> 
         </div>
         </div>
@@ -208,7 +209,6 @@ LIST TECHNOLOGIES USED?
 
   <section class="randomize">
     <div class="row">
-
       <h1 class="primary__heading"> spider issues of 2019 </h1>
       <form class="randomize__again">
         <ul class="randomize__ul">
