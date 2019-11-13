@@ -7,7 +7,6 @@ W3 STANDARD CHECK
 DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
 
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +18,7 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
+
 <body>
   <section class="nav__section test">
     <a href="index.html" class="nav__logo">
@@ -87,25 +87,25 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-            <div class="characters__cards">
-              <a href="{{urls.0.url}}"  target="_blank" >
-                {{#unless urls.0.url}} 
-                      <a href=" http://marvel.com" target="_blank" > 
-                      {{/unless}}
-                <div class="characters__cards__img">  
-                  <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-                   alt="{{name}}"> 
-                </div> 
-                <div class="characters__cards__info">
-                    <h6 class="sixth__heading"> {{name}}  </h6>
-                  {{#unless name}}
-                 <h6 class="sixth__heading">{{title}}</h6> 
-                  {{/unless}}
-                </div>
-                </div>
-              </a>
-                {{/each}}
-          </script>
+              <div class="characters__cards">
+                <a href="{{urls.0.url}}"  target="_blank" >
+                  {{#unless urls.0.url}} 
+                        <a href=" http://marvel.com" target="_blank" > 
+                        {{/unless}}
+                  <div class="characters__cards__img">  
+                    <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
+                     alt="{{name}}"> 
+                  </div> 
+                  <div class="characters__cards__info">
+                      <h6 class="sixth__heading"> {{name}}  </h6>
+                    {{#unless name}}
+                   <h6 class="sixth__heading">{{title}}</h6> 
+                    {{/unless}}
+                  </div>
+                  </div>
+                </a>
+                  {{/each}}
+            </script>
         </ul>
       </div>
 
@@ -121,7 +121,6 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
     </div>
   </section>
 
-
   <section class="characters">
     <div class="row">
       <h1 class="primary__heading">
@@ -130,22 +129,22 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
       <ul class="characters__template__ul">
         <script id="characters__template" type="text/x-handlebars-template">
           {{#each this}}
-    <div class="characters__cards">
-      <a href="{{urls.2.url}}" target="_blank">
-        {{#unless urls.2.url}}
-        <a href="http://marvel.com" target="_blank">
-          {{/unless}}
-          <div class="characters__cards__img">
-            <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
-          </div>
-          <div class="characters__cards__info">
-            <h6 class="sixth__heading"> {{name}} </h6>
-            <p class="characters__cards__p"> {{ comics.available}} issues </p>
-          </div>
-    </div>
-    </a>
-          {{/each}}
-      </script>
+      <div class="characters__cards">
+        <a href="{{urls.2.url}}" target="_blank">
+          {{#unless urls.2.url}}
+          <a href="http://marvel.com" target="_blank">
+            {{/unless}}
+            <div class="characters__cards__img">
+              <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
+            </div>
+            <div class="characters__cards__info">
+              <h6 class="sixth__heading"> {{name}} </h6>
+              <p class="characters__cards__p"> {{ comics.available}} issues </p>
+            </div>
+      </div>
+      </a>
+            {{/each}}
+        </script>
       </ul>
     </div>
   </section>
@@ -163,54 +162,47 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
           </li>
         </ul>
       </h1>
-
-
       <ul class="comics__listings">
         <script id="comic__book__template" type="text/x-handlebars-template">
           {{#each this}}
-      <div class="comics__cards">
-        <div class="comics__cards__img">  
-          <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-          alt="{{title}}"> 
-        </div>
-        <div class="comics__cards__info">
-          <h6 class="sixth__heading"> {{title}}  </h6>
-        <a href="{{urls.0.url}}" target="_blank"> more</a> 
-        </div>
-        </div>
-        {{/each}}
-      </script>
+              <div class="comics__cards">
+                <div class="comics__cards__img">  
+                  <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
+                  alt="{{title}}"> 
+                </div>
+                <div class="comics__cards__info">
+                  <h6 class="sixth__heading"> {{title}}  </h6>
+                <a href="{{urls.0.url}}" target="_blank"> more</a> 
+                </div>
+                </div>
+                {{/each}}
+              </script>
       </ul>
   </section>
-
-  <section class="randomize">
-    <div class="row">
-      <h1 class="primary__heading"> spider issues of 2019 </h1>
-      <form class="randomize__again">
-        <ul class="randomize__ul">
-
-          <script id="comic__book__randomize__template" type="text/x-handlebars-template">
-            <div class="randomize__comic__whole">
+  
+<section class="randomize">
+  <div class="row">
+    <h1 class="primary__heading"> spider issues of 2019 </h1>
+    <form class="randomize__again">
+      <ul class="randomize__ul">
+        <script id="comic__book__randomize__template" type="text/x-handlebars-template">
+          <div class="randomize__comic__whole">
         <div class="randomize__image"><img src="{{thumbnail.path}}/detail.{{thumbnail.extension}}" alt="{{title}}">
-         
         </div>
         <div class="randomize__info">
-          
-
           <div class="randomize__headings__group">
           <div class="randomize__issue">#{{issueNumber}}</div>
           <div class="randomize__title">{{title}}
-              <div class="randomize__date">{{formatDate dates.0.date day="numeric" month="long" year="numeric"}}</div>
-
+              <div class="randomize__date">
+                {{formatDate dates.0.date day="numeric" month="long" year="numeric"}}
+              </div>
           </div>
         </div>
-        
         <div class="randomize__triple__items">
-          
-        <p> {{format}} Format </p>  
-      <p> ${{prices.0.price}} </p>  
-        <p>{{pageCount}}  PAGES </p>  
-          <p> {{characters.returned}} Character(s) </p>   
+        <p> {{format}} Format </p>
+        <p> ${{prices.0.price}} </p>
+        <p>{{pageCount}} PAGES </p>
+        <p> {{characters.returned}} Character(s) </p>
          <P> 
            {{#if variants}}    {{variants.length}} Variant(s)
            {{/if}}
@@ -218,35 +210,24 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
            NO VARIANTS </p>
            {{/unless}}
        <p>{{creators.returned}} Contributors </p>
-      
-       
         </div>
-     
         <div class="randomize__links__btns">
-         
             <a href="{{urls.0.url}}" class="btn randomize__link"  target="_blank" >Read more </a> <button class="btn randomize__btn">Randomize </button> 
-
             </div>
-        
         </div>
       </div>
-    
         </script>
-        </ul>
-      </form>
-
-
-  </section>
+      </ul>
+    </form>
+</section>
 
   <section class="footer">
     <div class="row">
       <div class="footer__area">
         <p class="footer__area__marvel"> </p>
         <p> Made by <a href="https://github.com/joshua-tree-ctrl" target="_blank">joshua.tree.ctrl</a> </p>
-
       </div>
       <p>This is a personal project as part of a learning course. </p>
-
     </div>
   </section>
 
@@ -257,6 +238,6 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
   <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
   <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js" type="text/javascript"></script>
   <script src="assets/js/main.js" type="text/javascript"></script>
-</body>
+  </body>
 
-</html>
+  </html>

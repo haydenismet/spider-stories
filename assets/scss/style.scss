@@ -3,19 +3,16 @@
 1.6rem = 16px
 */
 
-
 ////// VARIABLES ////////
 $randomize-grey: #424242;
 $grey: #282828;
 $white: #ffffff;
 $red: #a22d23;
 $dark-red: #621913;
+$darkest-red: #511510;
 $off-white: #f2f2f2;
+$off-white-dark: #dcdcdc;
 ////////////////////////
-
-
-
-
 
 ////// BODY STYLES //////
 *,
@@ -136,9 +133,8 @@ a:visited {
   font-weight: 900;
   letter-spacing: 1rem;
   font-size: 3rem;
-  border: .5rem solid $white;
+  border: 0.5rem solid $white;
 }
-
 
 ////////////////////////////////
 
@@ -152,7 +148,6 @@ a:visited {
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
-
 
   &__heading {
     font-weight: 800;
@@ -180,9 +175,13 @@ a:visited {
       text-align: center;
       background-color: $dark-red;
       margin-bottom: 2rem;
+      cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        background-color: $darkest-red;
+      }
     }
-
-
   }
 
   &__list {
@@ -192,7 +191,6 @@ a:visited {
     font-weight: 800;
     font-size: 2rem;
   }
-
 
   &__years__options {
     display: none;
@@ -218,23 +216,20 @@ a:visited {
     border-style: none;
     width: 100%;
     cursor: pointer;
-  }
+    background-color: $off-white;
+    transition: 0.2s all;
 
+    &:hover {
+      background-color: $off-white-dark;
+    }
+  }
 }
 
 ////////////////////////////////
 
-
-
-
-
-
-
-
 /////////////// SEARCH RESULTS  //////////////
 
 .search__results {
-
   &__template__ul {
     display: flex;
     flex-direction: row;
@@ -249,13 +244,14 @@ a:visited {
     font-weight: 600;
     font-size: 1.4rem;
     text-align: center;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
 
     a:link,
     a:visited,
     a:hover,
     a:active {
       text-decoration: none;
+      transition: 0.2s all;
     }
 
     a:hover {
@@ -271,9 +267,6 @@ a:visited {
         background-color: $dark-red;
       }
     }
-
-
-
   }
 
   &__end {
@@ -282,27 +275,19 @@ a:visited {
     background-color: $red;
     margin-right: 1rem;
   }
-
 }
 
-
-
-
-
-
 ////////////////////////////////////////////////
-
-
 
 //////////////// CHARACTER STYLES ///////////////
 
 //////// SINGLE CHARACTERS //////////
 
-
 .characters {
-
   &__template__ul {
     display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
   }
 
   &__cards {
@@ -312,59 +297,54 @@ a:visited {
     margin-right: 3rem;
     display: flex;
     flex-direction: column;
-    
-    &:last-of-type {
-      margin-right:0;
-    } 
-  
+
+    /*&:last-of-type {
+      margin-right: 0;
+    } */
+
     img {
       width: 100%;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
-  
+
     &__info {
       flex: 1;
       border-left: solid 1rem $red;
       padding: 1rem;
       background-color: black;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
-  
+
     &__p {
       font-size: 1.2rem;
       letter-spacing: 0.5rem;
     }
-  
+
     a:link,
     a:visited {
       flex: 1;
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      transition: .2s all;
+      transition: 0.2s all;
     }
-  
+
     a:hover {
       color: $red;
       transform: translateY(-1rem);
     }
-  
+
     a:active {
       text-decoration: none;
     }
-   
   }
-
 }
 
-
-
 //////////////////////////////////////
-
-
 
 //////////// COMICS  ///////////
 
 .comics {
-
   &__tab {
     text-align: center;
     display: inline-flex;
@@ -374,13 +354,18 @@ a:visited {
       display: none;
     }
 
-    input[type="radio"]:checked + label {
+    input[type="radio"]:checked+label {
       background-color: $dark-red;
     }
 
     label {
       padding: 1.4rem;
       cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        background-color: $darkest-red;
+      }
     }
 
     li {
@@ -395,26 +380,30 @@ a:visited {
   &__listings {
     display: flex;
     flex-direction: row;
-    
-    
+    flex-wrap: wrap;
+    justify-content: center;
+
     img {
       width: 100%;
     }
-    
   }
 
   &__cards {
     width: 20rem;
-    text-transform: uppercase;
     margin-bottom: 5rem;
     margin-right: 3rem;
     display: flex;
     flex-direction: column;
-  
+
+   /* &:last-of-type {
+      margin-right: 0;
+    } */ 
+
     img {
       width: 100%;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
-  
+
     &__info {
       flex: 1;
       border-left: solid 1rem $red;
@@ -423,28 +412,27 @@ a:visited {
       display: flex;
       flex-direction: row;
       color: $white;
-  
-      a:link,a:visited {
-    
-        padding:.5rem;
-       text-decoration: none;
-        border:.2rem solid white;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+
+      a:link,
+      a:visited {
+        text-transform: uppercase;
+        padding: 0.5rem;
+        text-decoration: none;
+        border: 0.2rem solid white;
         align-self: flex-end;
         color: $white;
         letter-spacing: 0;
         font-size: 1.2rem;
-        transition:.3s all;
+        transition: 0.3s all;
       }
-    
+
       a:hover {
-        background-color:$red;
+        background-color: $red;
       }
     }
-
   }
-  
 }
-
 
 /////////////////////
 
@@ -479,7 +467,6 @@ a:visited {
   }
 
   &__issue {
-
     background-color: $red;
     font-weight: 700;
     color: $white;
@@ -495,7 +482,6 @@ a:visited {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     color: $randomize-grey;
-
   }
 
   &__date {
@@ -509,9 +495,7 @@ a:visited {
     flex-wrap: wrap;
     text-align: center;
 
-
     p {
-
       text-transform: uppercase;
       letter-spacing: 0.5rem;
       padding: 1.6rem 2rem 1.6rem 2rem;
@@ -520,7 +504,6 @@ a:visited {
       color: $white;
       font-weight: 600;
       margin: 2rem 1rem 2rem 0;
-
     }
   }
 
@@ -529,46 +512,36 @@ a:visited {
     justify-content: center;
     font-size: 1.6rem;
 
-
-
     a:link,
     a:visited {
-
       text-decoration: none;
-      transition: .3s all;
-
+      transition: 0.3s all;
     }
 
     a:hover,
     a:active {
-
       background-color: $grey;
       text-decoration: none;
     }
   }
 
   &__link {
-
     background-color: $randomize-grey;
     color: $white;
     font-weight: 900;
     border: 0;
     margin-right: 2rem;
-
   }
 
   &__btn {
-
     font-size: 1.6rem;
     background-color: $red;
     color: $white;
     font-weight: 900;
     border: 0;
-    transition: .3s all;
-
+    transition: 0.3s all;
 
     &:hover {
-
       background-color: $dark-red;
     }
   }
@@ -587,67 +560,57 @@ a:visited {
   }
 }
 
-
-
 /* 
 56.25em = 900px
 75em = 1200px 
 112.5em = 1800px
-*/ 
+*/
 
-//1800px and up 
+//1800px and up
 @media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
   }
 }
 
-
-//1200px and down 
+//1200px and down
 @media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 
-.characters {
-  padding:5rem;
-  &__template__ul {
-    justify-content: center;
+  .characters {
+    padding: 5rem;
+
+    &__template__ul {
+      justify-content: center;
+    }
+  }
+
+  .comics {
+    padding: 5rem;
+
+    &__listings {
+      justify-content: center;
+    }
   }
 }
 
-.comics {
-  padding:5rem;
-  &__listings {
-    justify-content:center;
-  }
-}
-
-  
-
-}
-
-// 900px and down 
+// 900px and down
 @media only screen and (max-width: 56.25em) {
   html {
     font-size: 50%;
   }
+  .comics__listings {}
 
-  .comics__listings {
-    flex-wrap:wrap;
-    justify-content: center;
-  }
-
-  .characters__template__ul {
-    flex-wrap:wrap;
-    justify-content: center;
-  }
-
+  .characters__template__ul {}
 }
 
-// 600px and down 
+// 600px and down
 @media only screen and (max-width: 37.5em) {
-/* test html */  html {
-   // font-size: 25%;
+
+  /* test html */
+  html {
+    // font-size: 25%;
   }
 }
