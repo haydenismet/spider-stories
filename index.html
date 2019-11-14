@@ -5,6 +5,9 @@ DRY CODE
 MINIFY CODE
 W3 STANDARD CHECK 
 DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
+FIX responsive areas?
+Make MORE tab on comics as an actual button underneath or full width area
+
 
 -->
 <!DOCTYPE html>
@@ -21,66 +24,65 @@ DO A LISTING OF TECH STACK USED i.e SASS (ONLY NESTING AND COLOUR VARIABLES)
 
 <body>
 
+  
+<section class="search__area">
   <section class="nav__section">
+    <a href="index.html" class="nav__logo">
+      <img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1573756599/Asset_1_d8cq1s.png" alt="Logo"
+        class="logo_form">
+    </a>
   </section>
-
-  <section class="search__area">
-    
-    <div class="row">
-        <a href="index.html" class="nav__logo">
-            <!-- <div class="nav__wordmark__logo">SPIDEY <i class="fas fa-spider"></i></div> -->
-            <!--<img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1573756599/Asset_1_d8cq1s.png" alt="Logo"> -->
-          </a>
-      <form class="search__area__form">
-        <h2 class="search__area__heading"> SHOW ME </h2>
-        <div class="search__area__radios">
-          <ul class="search__area__list">
-            <li>
-              <input type="radio" id="characters" class="search__area__radio__tab" name="skills" value="characters">
-              <label for="characters">Characters</label>
-            </li>
-            <li>
-              <input type="radio" id="years" class="search__area__radio__tab" name="skills" value="years">
-              <label for="years">Years</label>
-            </li>
-            <select name="search__area__years__tab" class="search__area__years__options">
-              <option value="1990">1990</option>
-              <option value="1991">1991</option>
-              <option value="1992">1992</option>
-              <option value="1993">1993</option>
-              <option value="1994">1994</option>
-              <option value="1995">1995</option>
-              <option value="1996">1996</option>
-              <option value="1997">1997</option>
-              <option value="1998">1998</option>
-              <option value="1999">1999</option>
-              <option value="2000">2000</option>
-              <option value="2001">2001</option>
-              <option value="2002">2002</option>
-              <option value="2003">2003</option>
-              <option value="2004">2004</option>
-              <option value="2005">2005</option>
-              <option value="2006">2006</option>
-              <option value="2007">2007</option>
-              <option value="2008">2008</option>
-              <option value="2009">2009</option>
-              <option value="2010">2010</option>
-              <option value="2011">2011</option>
-              <option value="2012">2012</option>
-              <option value="2013">2013</option>
-              <option value="2014">2014</option>
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-            </select>
-        </div>
-        </ul>
-        <input class="search__area__submit" type="submit" value="GO">
-      </form>
-    </div>
-  </section>
+  <div class="row">
+    <form class="search__area__form">
+      <h2 class="search__area__heading"> SHOW ME</h2>
+      <div class="search__area__radios">
+        <ul class="search__area__list">
+          <li>
+            <input type="radio" id="characters" class="search__area__radio__tab" name="skills" value="characters">
+            <label for="characters">Characters</label>
+          </li>
+          <li>
+            <input type="radio" id="years" class="search__area__radio__tab" name="skills" value="years">
+            <label for="years">Years</label>
+          </li>
+          <select name="search__area__years__tab" class="search__area__years__options">
+            <option value="1990">1990</option>
+            <option value="1991">1991</option>
+            <option value="1992">1992</option>
+            <option value="1993">1993</option>
+            <option value="1994">1994</option>
+            <option value="1995">1995</option>
+            <option value="1996">1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+          </select>
+      </div>
+      </ul>
+      <input class="search__area__submit" type="submit" value="GO">
+    </form>
+  </div>
+</section>
 
 
   <section class="search__results">
