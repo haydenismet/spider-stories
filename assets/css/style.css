@@ -82,15 +82,10 @@ a:visited {
   margin-bottom: 15rem;
   margin-top: 5rem; }
 
-.nav__section {
-  background-color: #282828;
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 3rem; }
-
 .nav__logo {
   text-decoration: none; }
+  .nav__logo img {
+    width: 10%; }
 
 .nav__wordmark__logo {
   color: #ffffff;
@@ -98,11 +93,13 @@ a:visited {
   font-weight: 900;
   letter-spacing: 1rem;
   font-size: 3rem;
-  border: 0.5rem solid #ffffff; }
+  border: 0.5rem solid #ffffff;
+  margin-bottom: 5rem; }
 
 .search__area {
-  background-color: #a22d23;
-  height: 50vh;
+  background-image: url("https://res.cloudinary.com/fluxcapacitor/image/upload/v1573753684/spider_big_bg_pfzmda.jpg");
+  background-size: 60%;
+  height: 55vh;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
   display: flex;
   justify-content: center;
