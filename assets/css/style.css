@@ -417,9 +417,16 @@ a:visited {
       display: flex;
       justify-content: center;
       border-right: 1rem solid #a22d23; }
+  .comics__cards__info {
+    display: block;
+    text-align: center;
+    border-right: 1rem solid #a22d23; }
   .comics__cards__info a:link, .comics__cards__info a:visited {
     font-size: 1.6rem;
-    align-self: auto; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; }
   .comics__tab li:first-child {
     margin-left: 1.5rem; }
   .randomize__comic__whole {
@@ -435,3 +442,17 @@ a:visited {
     margin-bottom: 1.5rem; }
   .randomize__links__btns {
     margin-top: 3rem; } }
+
+@media only screen and (max-width: 30em) {
+  .characters__cards__info {
+    text-align: center;
+    border-right: 1rem solid #a22d23; }
+  .comics__tab {
+    display: inline-flex;
+    flex-direction: column; }
+    .comics__tab li {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .comics__tab li label {
+        padding: 1rem; } }

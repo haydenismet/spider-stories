@@ -623,14 +623,17 @@ a:visited {
   }
 
   .comics__cards__info {
-  
+  display:block;
+  text-align:center;
+  border-right:1rem solid $red;
   }
 
   .comics__cards__info a:link, .comics__cards__info a:visited {
-  
     font-size:1.6rem;
-   
-    align-self: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    margin-top:2rem;
   
   }
 
@@ -665,4 +668,29 @@ a:visited {
   
   }
   
+}
+
+// 480px and down
+@media only screen and (max-width: 30em) {
+  .characters__cards__info {text-align:center;
+  border-right:1rem solid $red;}
+  .comics__tab {
+    display:inline-flex;
+    flex-direction:column;
+    
+    li {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      label {
+        padding:1rem;
+      }
+     
+    }
+   
+  }
+
+  
+
 }
