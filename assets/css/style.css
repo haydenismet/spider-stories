@@ -432,16 +432,26 @@ a:visited {
   .randomize__comic__whole {
     display: flex;
     flex-direction: column; }
+  .randomize__info {
+    margin: 0; }
+  .randomize__ul {
+    display: flex;
+    justify-content: center; }
+  .randomize__issue {
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .randomize__image {
     display: flex;
     justify-content: center;
     margin-bottom: 3rem; }
+  .randomize__triple__items {
+    display: inline-block; }
   .randomize img {
-    width: 70%; }
+    max-width: 99%; }
   .randomize__headings__group {
-    margin-bottom: 1.5rem; }
-  .randomize__links__btns {
-    margin-top: 3rem; } }
+    margin-bottom: 1.5rem; } }
 
 @media only screen and (max-width: 30em) {
   .characters__cards__info {
@@ -456,3 +466,19 @@ a:visited {
       align-items: center; }
       .comics__tab li label {
         padding: 1rem; } }
+
+@media only screen and (max-width: 20em) {
+  .randomize__triple__items p {
+    margin: 2rem 0 2rem 0; }
+  .randomize__links__btns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem; }
+    .randomize__links__btns a {
+      flex-grow: 1;
+      text-align: center;
+      margin-bottom: 3rem; }
+    .randomize__links__btns button {
+      flex-grow: 1; }
+  .randomize__link {
+    margin-right: 0; } }

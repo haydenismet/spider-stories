@@ -648,23 +648,42 @@ a:visited {
 
   .randomize {
 
+    &__info {
+      margin:0;
+    }
+
+    &__ul {
+      display:flex;
+      justify-content:center;
+    }
+
+    &__issue {
+      border-radius:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
     &__image {
       display:flex;
       justify-content:center;
       margin-bottom:3rem;
     }
+
+    &__triple__items {
+      display:inline-block;
+     
+    }
     
     img {
-      width: 70%;
+      max-width: 99%;
     } 
 
     &__headings__group {
       margin-bottom:1.5rem;
     }
 
-    &__links__btns {
-      margin-top:3rem;
-    }
+    
   
   }
   
@@ -691,6 +710,45 @@ a:visited {
    
   }
 
+
+ 
   
+
+}
+
+
+// 420px and down
+@media only screen and (max-width: 20em) {
+
+  .randomize {
+    &__triple__items {
+      p {
+        margin:2rem 0 2rem 0;
+      }
+    }
+
+
+    &__links__btns {
+      display:flex;
+      flex-wrap:wrap;
+      margin-top:3rem;
+     
+      a {
+        flex-grow:1;
+        text-align:center;
+        margin-bottom:3rem;
+      }
+
+
+  
+      button {
+        flex-grow:1;
+      }
+    }
+
+    &__link {
+      margin-right:0;
+    }
+  }
 
 }
