@@ -64,9 +64,9 @@ $(".search__area__list").on("click", "li", function() {
   searchSelect = $(this).children().val(); // For (this) list item, find the children of this list item,  (input and label), and find the VAL (value of the input).
   //Toggle the hide/show of the years options 1990 - 2019 
   if (searchSelect === "years") {
-    $(".search__area__years__options").show();
+    $(".search__area__years__options").show('fast');
   } else if (searchSelect === "characters") {
-    $(".search__area__years__options").hide();
+    $(".search__area__years__options").hide('fast');
   }
 
 });
@@ -96,6 +96,9 @@ $(".search__area__form").on("submit", function(e) {
   var url; //Declaring
   var yearChoice = $(".search__area__years__options").val();
  
+  $(".characters").remove(); //Remove homepage content to make way for search result content
+  $(".comics").remove(); //Remove homepage content to make way for search result content
+  $(".randomize").remove(); //Remove homepage content to make way for search result content
   
   // Store year chosen from dropdown toggle in variable for later use on submit
   //Setting character HTTP request link
@@ -152,10 +155,6 @@ $(".search__area__form").on("submit", function(e) {
         .children(".primary__heading")
         .show(); // Show class which will contain static HTML content for the search (ie links, headers)
       console.log(responseSearch);
-
-      $(".characters").remove(); //Remove homepage content to make way for search result content
-      $(".comics").remove(); //Remove homepage content to make way for search result content
-      $(".randomize").remove(); //Remove homepage content to make way for search result content
 
   ////////////////////////////////// HANDLEBARS TEMPLATE ONSUBMIT ///////////////////////////////////////////
       var source = $("#search__results__template__script").html(); //Retrieve script ID area of HTML

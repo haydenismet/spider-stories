@@ -115,8 +115,8 @@ a:visited {
 
 ////// NAV STYLES //////
 .logo_form {
-  max-width:26rem;
- }
+  max-width: 26rem;
+}
 
 .nav__section {
   display: flex;
@@ -137,19 +137,19 @@ a:visited {
 
 .search__area {
   background-image: url('https://res.cloudinary.com/fluxcapacitor/image/upload/v1573753684/spider_big_bg_pfzmda.jpg');
-  background-size:60%;
+  background-size: 60%;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
 
   &__heading {
     font-weight: 800;
     letter-spacing: 1.8rem;
     margin-bottom: 2rem;
     font-size: 3rem;
-    text-align:center;
+    text-align: center;
   }
 
   &__form {
@@ -283,7 +283,7 @@ a:visited {
   &__template__ul {
     display: flex;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
 
   &__cards {
@@ -391,9 +391,9 @@ a:visited {
     display: flex;
     flex-direction: column;
 
-   /* &:last-of-type {
+    /* &:last-of-type {
       margin-right: 0;
-    } */ 
+    } */
 
     img {
       width: 100%;
@@ -437,8 +437,7 @@ a:visited {
 /////SORT SIZING ////
 
 .randomize {
-  padding:5rem;
-  &__again {}
+  padding: 5rem;
 
   &__ul {
     display: flex;
@@ -461,6 +460,7 @@ a:visited {
 
   &__headings__group {
     display: flex;
+    align-items: center;
   }
 
   &__issue {
@@ -470,7 +470,7 @@ a:visited {
     padding: 2rem;
     margin-right: 3rem;
     font-size: 3rem;
-    
+
   }
 
   &__title {
@@ -556,9 +556,10 @@ a:visited {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
 }
+//////////////////////////////////////////
 
 /* 
 56.25em = 900px
@@ -571,10 +572,9 @@ a:visited {
   html {
     font-size: 75%;
   }
-
   .logo_form {
-    max-width:20rem;
-   }
+    max-width: 20rem;
+  }
 }
 
 //1200px and down
@@ -585,6 +585,7 @@ a:visited {
 
   .characters {
     padding: 5rem;
+
     &__template__ul {
       justify-content: center;
     }
@@ -604,164 +605,160 @@ a:visited {
   html {
     font-size: 50%;
   }
-  .comics__listings {}
-
-  .characters__template__ul {}
 }
 
 // 600px and down
 @media only screen and (max-width: 37.5em) {
+  .primary__heading {
+    text-align: center;
+    border-right: 1rem solid $red;
+    display: flex;
+    justify-content: center;
+
+    &__tab {
+      display: flex;
+      justify-content: center;
+      border-right: 1rem solid $red;
+    }
+  }
+
   .comics__listings {
-margin-left:3rem;
+    margin-left: 3rem;
   }
 
   .characters__template__ul {
-    margin-left:3rem;
-  }
-  .primary__heading {   
-    text-align:center;  
-    border-right:1rem solid $red;
-    display:flex;
-    justify-content:center;
-
-    &__tab {
-      display:flex;
-      justify-content:center;
-      border-right:1rem solid $red;
-    }
+    margin-left: 3rem;
   }
 
   .comics__cards__info {
-  display:block;
-  text-align:center;
-  border-right:1rem solid $red;
+    display:flex;
+    flex-wrap:wrap;
+    text-align: center;
+    border-right: 1rem solid $red;
   }
 
-  .comics__cards__info a:link, .comics__cards__info a:visited {
-    font-size:1.6rem;
+  .comics__cards__info a:link,
+  .comics__cards__info a:visited {
+    font-size: 1.6rem;
     display: flex;
     justify-content: center;
-    align-items: center;   
-    margin-top:2rem;
-  
+    align-items: center;
+    margin-top: 2rem;
+    flex:1;
   }
 
   .comics__tab li:first-child {
-    margin-left:1.5rem;
+    margin-left: 1.5rem;
   }
 
-  .randomize__comic__whole {
-    display:flex;
-    flex-direction:column;
-  }
 
- 
 
   .randomize {
 
+    &__comic__whole {
+      display: flex;
+      flex-direction: column;
+    }
+
     &__info {
-      margin:0;
+      margin: 0;
     }
 
     &__ul {
-      display:flex;
-      justify-content:center;
+      display: flex;
+      justify-content: center;
     }
 
     &__issue {
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &__image {
-      display:flex;
-      justify-content:center;
-      margin-bottom:3rem;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
     }
 
     &__triple__items {
-      display:inline-block;
-     
+      display: inline-block;
     }
-    
+
     img {
       max-width: 99%;
-    } 
-
-    &__headings__group {
-      margin-bottom:1.5rem;
     }
 
-    
-  
+    &__headings__group {
+      margin-bottom: 1.5rem;
+    }
+
   }
 
   .footer__area__marvel {
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
   }
-  
+
 }
 
 // 480px and down
 @media only screen and (max-width: 30em) {
-  .characters__cards__info {text-align:center;
-  border-right:1rem solid $red;}
-  .comics__tab {
-    display:inline-flex;
-    flex-direction:column;
-    
-    li {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      label {
-        padding:1rem;
-      }
-     
-    }
-   
+  .characters__cards__info {
+    text-align: center;
+    border-right: 1rem solid $red;
   }
 
-  
-  
+  .comics__tab {
+    display: inline-flex;
+    flex-direction: column;
+    flex-basis:100%;
 
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom:1rem;
+     
+      &:first-child {
+        margin:0;
+      }
+
+      label {
+        padding: 1rem;
+        flex-basis:100%;
+      }
+    }
+  }
 }
 
 
 // 420px and down
 @media only screen and (max-width: 20em) {
-
   .randomize {
     &__triple__items {
       p {
-        margin:2rem 0 2rem 0;
+        margin: 2rem 0 2rem 0;
       }
     }
 
-
     &__links__btns {
-      display:flex;
-      flex-wrap:wrap;
-      margin-top:3rem;
-     
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+
       a {
-        flex-grow:1;
-        text-align:center;
-        margin-bottom:3rem;
+        flex-grow: 1;
+        text-align: center;
+        margin-bottom: 3rem;
       }
 
-
-  
       button {
-        flex-grow:1;
+        flex-grow: 1;
       }
     }
 
     &__link {
-      margin-right:0;
+      margin-right: 0;
     }
   }
-
 }

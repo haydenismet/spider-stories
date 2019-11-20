@@ -310,7 +310,8 @@ a:visited {
     justify-content: space-between;
     margin-left: 5rem; }
   .randomize__headings__group {
-    display: flex; }
+    display: flex;
+    align-items: center; }
   .randomize__issue {
     background-color: #a22d23;
     font-weight: 700;
@@ -408,10 +409,6 @@ a:visited {
     font-size: 50%; } }
 
 @media only screen and (max-width: 37.5em) {
-  .comics__listings {
-    margin-left: 3rem; }
-  .characters__template__ul {
-    margin-left: 3rem; }
   .primary__heading {
     text-align: center;
     border-right: 1rem solid #a22d23;
@@ -421,16 +418,23 @@ a:visited {
       display: flex;
       justify-content: center;
       border-right: 1rem solid #a22d23; }
+  .comics__listings {
+    margin-left: 3rem; }
+  .characters__template__ul {
+    margin-left: 3rem; }
   .comics__cards__info {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     border-right: 1rem solid #a22d23; }
-  .comics__cards__info a:link, .comics__cards__info a:visited {
+  .comics__cards__info a:link,
+  .comics__cards__info a:visited {
     font-size: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    flex: 1; }
   .comics__tab li:first-child {
     margin-left: 1.5rem; }
   .randomize__comic__whole {
@@ -464,13 +468,18 @@ a:visited {
     border-right: 1rem solid #a22d23; }
   .comics__tab {
     display: inline-flex;
-    flex-direction: column; }
+    flex-direction: column;
+    flex-basis: 100%; }
     .comics__tab li {
       display: flex;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      margin-bottom: 1rem; }
+      .comics__tab li:first-child {
+        margin: 0; }
       .comics__tab li label {
-        padding: 1rem; } }
+        padding: 1rem;
+        flex-basis: 100%; } }
 
 @media only screen and (max-width: 20em) {
   .randomize__triple__items p {
