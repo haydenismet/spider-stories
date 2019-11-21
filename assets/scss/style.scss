@@ -57,8 +57,12 @@ a:visited {
 
 .primary__heading {
   font-size: 1.8rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   text-transform: uppercase;
   color: $white;
   background-color: $grey;
@@ -70,8 +74,12 @@ a:visited {
 
 .primary__heading__tab {
   font-size: 1.8rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   text-transform: uppercase;
   color: $white;
   background-color: $grey;
@@ -119,8 +127,12 @@ a:visited {
 }
 
 .nav__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 5rem;
   margin-bottom: 3rem;
 
@@ -138,11 +150,21 @@ a:visited {
 .search__area {
   background-image: url('https://res.cloudinary.com/fluxcapacitor/image/upload/v1573753684/spider_big_bg_pfzmda.jpg');
   background-size: 60%;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 
   &__heading {
     font-weight: 800;
@@ -172,6 +194,7 @@ a:visited {
       background-color: $dark-red;
       margin-bottom: 2rem;
       cursor: pointer;
+      -webkit-transition: 0.2s all;
       transition: 0.2s all;
 
       &:hover {
@@ -213,6 +236,7 @@ a:visited {
     width: 100%;
     cursor: pointer;
     background-color: $off-white;
+    -webkit-transition: 0.2s all;
     transition: 0.2s all;
 
     &:hover {
@@ -227,15 +251,27 @@ a:visited {
 
 .search__results {
   &__template__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   &__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.4rem;
@@ -247,6 +283,7 @@ a:visited {
     a:hover,
     a:active {
       text-decoration: none;
+      -webkit-transition: 0.2s all;
       transition: 0.2s all;
     }
 
@@ -281,9 +318,14 @@ a:visited {
 
 .characters {
   &__template__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   &__cards {
@@ -291,8 +333,13 @@ a:visited {
     text-transform: uppercase;
     margin-bottom: 5rem;
     margin-right: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     /*&:last-of-type {
       margin-right: 0;
@@ -300,15 +347,19 @@ a:visited {
 
     img {
       width: 100%;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
     &__info {
-      flex: 1;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
       border-left: solid 1rem $red;
       padding: 1rem;
       background-color: black;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
     &__p {
@@ -318,16 +369,25 @@ a:visited {
 
     a:link,
     a:visited {
-      flex: 1;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       text-decoration: none;
+      -webkit-transition: 0.2s all;
       transition: 0.2s all;
     }
 
     a:hover {
       color: $red;
-      transform: translateY(-1rem);
+      -webkit-transform: translateY(-1rem);
+              transform: translateY(-1rem);
     }
 
     a:active {
@@ -343,8 +403,13 @@ a:visited {
 .comics {
   &__tab {
     text-align: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 
     input[type="radio"] {
       display: none;
@@ -357,6 +422,7 @@ a:visited {
     label {
       padding: 1.4rem;
       cursor: pointer;
+      -webkit-transition: 0.2s all;
       transition: 0.2s all;
 
       &:hover {
@@ -374,10 +440,18 @@ a:visited {
   }
 
   &__listings {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     img {
       width: 100%;
@@ -388,8 +462,13 @@ a:visited {
     width: 20rem;
     margin-bottom: 5rem;
     margin-right: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     /* &:last-of-type {
       margin-right: 0;
@@ -397,18 +476,27 @@ a:visited {
 
     img {
       width: 100%;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
     &__info {
-      flex: 1;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
       border-left: solid 1rem $red;
       padding: 1rem;
       background-color: black;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
       color: $white;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 
       a:link,
       a:visited {
@@ -416,10 +504,12 @@ a:visited {
         padding: 0.5rem;
         text-decoration: none;
         border: 0.2rem solid white;
-        align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
         color: $white;
         letter-spacing: 0;
         font-size: 1.2rem;
+        -webkit-transition: 0.3s all;
         transition: 0.3s all;
       }
 
@@ -440,10 +530,14 @@ a:visited {
   padding: 5rem;
 
   &__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
   &__comic__whole {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -452,15 +546,26 @@ a:visited {
   }
 
   &__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-left: 5rem;
   }
 
   &__headings__group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   &__issue {
@@ -487,9 +592,15 @@ a:visited {
   }
 
   &__triple__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: center;
 
     p {
@@ -505,13 +616,18 @@ a:visited {
   }
 
   &__links__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 1.6rem;
 
     a:link,
     a:visited {
       text-decoration: none;
+      -webkit-transition: 0.3s all;
       transition: 0.3s all;
     }
 
@@ -536,6 +652,7 @@ a:visited {
     color: $white;
     font-weight: 900;
     border: 0;
+    -webkit-transition: 0.3s all;
     transition: 0.3s all;
 
     &:hover {
@@ -553,10 +670,18 @@ a:visited {
   padding: 5rem;
 
   &__area {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 //////////////////////////////////////////
@@ -587,7 +712,9 @@ a:visited {
     padding: 5rem;
 
     &__template__ul {
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
     }
   }
 
@@ -595,7 +722,9 @@ a:visited {
     padding: 5rem;
 
     &__listings {
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
     }
   }
 }
@@ -612,12 +741,20 @@ a:visited {
   .primary__heading {
     text-align: center;
     border-right: 1rem solid $red;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     &__tab {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       border-right: 1rem solid $red;
     }
   }
@@ -631,8 +768,11 @@ a:visited {
   }
 
   .comics__cards__info {
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
     text-align: center;
     border-right: 1rem solid $red;
   }
@@ -640,11 +780,19 @@ a:visited {
   .comics__cards__info a:link,
   .comics__cards__info a:visited {
     font-size: 1.6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 2rem;
-    flex:1;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
   }
 
   .comics__tab li:first-child {
@@ -656,8 +804,13 @@ a:visited {
   .randomize {
 
     &__comic__whole {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
     }
 
     &__info {
@@ -665,19 +818,33 @@ a:visited {
     }
 
     &__ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
     }
 
     &__issue {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 
     &__image {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       margin-bottom: 3rem;
     }
 
@@ -709,14 +876,26 @@ a:visited {
   }
 
   .comics__tab {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    flex-direction: column;
-    flex-basis:100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size:100%;
+        flex-basis:100%;
 
     li {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       margin-bottom:1rem;
      
       &:first-child {
@@ -725,7 +904,8 @@ a:visited {
 
       label {
         padding: 1rem;
-        flex-basis:100%;
+        -ms-flex-preferred-size:100%;
+            flex-basis:100%;
       }
     }
   }
@@ -742,18 +922,25 @@ a:visited {
     }
 
     &__links__btns {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
       margin-top: 3rem;
 
       a {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         text-align: center;
         margin-bottom: 3rem;
       }
 
       button {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
       }
     }
 
