@@ -423,7 +423,7 @@ randomizeSpider(); //calling function on page load
 
 /////////////////// USER INTERACTION CLICK TO RANDOMIZE AGAIN ////////////////////////////////
 
-$(".randomize__again").on("click", function(e) {
+$(".randomize__btn").on("click", function(e) {
   e.preventDefault();
 //On submit, find (this) whole comic section and remove it, and re-call the function. 
   $(this)
