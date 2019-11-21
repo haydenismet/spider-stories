@@ -16,6 +16,7 @@ CSS PASSED.
 
 adding semantic html but not adding styling to it. Added header and main no class assignment. Cards would be too difficult to now push into a figure/caption format. Already got things like section class. 
 
+remove console logs/comments 
 
 -->
 <!DOCTYPE html>
@@ -146,6 +147,7 @@ adding semantic html but not adding styling to it. Added header and main no clas
           {{#each this}}
       <div class="characters__cards">
         <a href="{{urls.2.url}}" target="_blank">
+
             <div class="characters__cards__img">
               <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
             </div>
@@ -153,8 +155,9 @@ adding semantic html but not adding styling to it. Added header and main no clas
               <h6 class="sixth__heading"> {{name}} </h6>
               <p class="characters__cards__p"> {{ comics.available}} issues </p>
             </div>
+          </a>
       </div>
-      </a>
+      
             {{/each}}
         </script>
       </ul>

@@ -250,6 +250,7 @@ $.ajax({
     ];
     var displayData = template(hayArrayObj);
     $(".characters__template__ul").append(displayData);
+    console.log(hayArrayObj);
   },
 
   beforeSend: function() {
