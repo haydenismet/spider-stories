@@ -433,6 +433,14 @@ $(".randomize__again").on("submit", function(e) {
   randomizeSpider();
 });
 
+
+$(".randomize__btn").on("click", function(e) {
+  e.preventDefault();
+
+
+  randomizeSpider();
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
