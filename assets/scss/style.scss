@@ -1,34 +1,18 @@
 /*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-ORDER: Base + typography > general layout + grid > page layout > components
-
 1em = 16px
 1.6rem = 16px
 */
 
-////// VARIABLES //////
+////// VARIABLES ////////
 $randomize-grey: #424242;
 $grey: #282828;
 $white: #ffffff;
 $red: #a22d23;
 $dark-red: #621913;
+$darkest-red: #511510;
 $off-white: #f2f2f2;
-//////////////////////
-a:link,
-a:visited {
-  color: white;
-}
+$off-white-dark: #dcdcdc;
+////////////////////////
 
 ////// BODY STYLES //////
 *,
@@ -43,24 +27,6 @@ a:visited {
 html {
   font-size: 62.5%;
   /* 16px */
-}
-
-@media only screen and (max-width: 75em) {
-  html {
-    font-size: 56.25%;
-  }
-}
-
-@media only screen and (max-width: 56.25em) {
-  html {
-    font-size: 50%;
-  }
-}
-
-@media only screen and (min-width: 112.5em) {
-  html {
-    font-size: 75%;
-  }
 }
 
 body {
@@ -79,31 +45,14 @@ body {
 
 ////// GLOBAL STYLES //////
 
+a:link,
+a:visited {
+  color: white;
+}
+
 .row {
   max-width: 120rem;
   margin: auto;
-  //margin auto to center div left/right  so row is center.
-  //add margin to sections where you want spacing.
-  //greyed out if using flexbox test for search section
-}
-
-.home__logo {
-  
-    text-decoration:none;
- 
-}
-
-
-.wordmark__logo {
-  color:$white;
-
- 
-  padding:1rem 2rem 1rem 2rem;
-  font-weight:900;
-letter-spacing:1rem;
- font-size:3rem;
-border:.5rem solid $white;
-  
 }
 
 .primary__heading {
@@ -153,7 +102,7 @@ border:.5rem solid $white;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   cursor: pointer;
-  padding:1.5rem 3rem 1.5rem 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
 }
 
 .loading {
@@ -165,234 +114,234 @@ border:.5rem solid $white;
 ///////////////////////////
 
 ////// NAV STYLES //////
-
-.nav__section img {
-  width: 70%;
+.logo_form {
+  max-width: 26rem;
 }
 
 .nav__section {
-  background-color: $grey;
-
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  border-bottom: 3rem $red;
-  border-style: double;
-}
-.home__logo {
-  display: flex;
-  justify-content: center;
-}
-.button__group {
-  align-self: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
 }
 
-.btn__nav {
-  color: $grey;
-  background-color: $white;
-  font-size: 1.2rem;
-  padding: 1.3rem;
-  border-style: none;
-  margin-right: 1.6rem;
+.nav__logo {
+  text-decoration: none;
 }
 
-///////////////////////////
 
-////// SEARCH STYLES //////
+////////////////////////////////
 
-.comic__search__section {
-  background-color: $red;
-  height: 50vh; //make relative to VH?
-  //margin-top:-2.2rem;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 80%);
+////////// SEARCH AREA /////////
+
+.search__area {
+  background-image: url('https://res.cloudinary.com/fluxcapacitor/image/upload/v1573753684/spider_big_bg_pfzmda.jpg');
+  background-size: 60%;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
-  
-}
+  flex-direction: column;
 
-/* 
-.comic__search__section:before {
-  content: "\f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717 \f717";
-  z-index:300;
-  font-family:'Font Awesome 5 Pro';
-  font-weight:900;
-  font-size:5rem;
-  color:white;
-  opacity:.2;
-  
-} */
-
-.comic__search {
-  color: $white;
-  text-align: center;
-  margin-bottom: 10rem;
-
-  input[type="radio"] {
-    display: none;
-  }
-
-  input[type="radio"]:checked + label {
-    border: solid 0.3rem $white;
-  }
-
-  label {
-    display: block;
-    padding: 0.6rem;
-    text-align: center;
-    background-color: $dark-red;
-  }
-
-  &--heading {
+  &__heading {
     font-weight: 800;
     letter-spacing: 1.8rem;
     margin-bottom: 2rem;
-    font-size: 4rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
-  &--radios {
-    //background-color: red;
+  &__form {
+    color: $white;
+    text-align: center;
+    margin-bottom: 10rem;
 
-    li {
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked+label {
+      border: solid 0.3rem $white;
+    }
+
+    label {
+      display: block;
+      padding: 0.6rem;
+      text-align: center;
+      background-color: $dark-red;
       margin-bottom: 2rem;
+      cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        background-color: $darkest-red;
+      }
     }
   }
 
-  &--list {
+  &__list {
     list-style-type: none;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  &--submit {
+  &__years__options {
+    display: none;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    background-color: $dark-red;
+    border-style: none;
+    padding: 1rem;
+    color: $white;
+    margin-bottom: 2rem;
+  }
+
+  &__submit {
     color: $grey;
     padding: 1rem;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 1rem;
     text-indent: 1rem;
     border-style: none;
     width: 100%;
     cursor: pointer;
+    background-color: $off-white;
+    transition: 0.2s all;
+
+    &:hover {
+      background-color: $off-white-dark;
+    }
   }
 }
 
-.comic--radio {
-  cursor: pointer;
-}
+////////////////////////////////
 
-.year__container select {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0;
-}
-.years__options {
-  display: none;
-}
+/////////////// SEARCH RESULTS  //////////////
 
-.years__options {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.5rem;
-  background-color: $dark-red;
-  border-style: none;
-  padding: 1rem;
-  color: $white;
-  margin-bottom: 2rem;
-}
-
-.yearContainer {
-  text-align: center;
-}
-
-////// CHARACTER STYLES //////
-
-//////// SINGLE CHARACTERS //////////
-
-.character__card__one {
-  width: 20rem;
-  text-transform: uppercase;
-  margin-bottom: 5rem;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-
-  img {
-    width: 100%;
-  }
-
-  a:link,
-  a:visited {
-    flex:1;
-    display: flex;
-    flex-direction:column;
-    text-decoration: none;
-    transition: .2s all;
-  }
-  a:hover {
-    color: $red;
-   
-    transform: translateY(-1rem);
-  }
-
-  a:active {
-    text-decoration: none;
-  }
-}
-
-.character__template__hb {
-  
-}
-//////////////////////////////////////
-
-.character__card__comic--info {
-  flex: 1;
-  border-left: solid 1rem $red;
-  padding: 1rem;
-  color: $white;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  
-
-  a:link,a:visited {
-    
-    padding:.5rem;
-   text-decoration: none;
-    border:.2rem solid white;
-    align-self: flex-end;
-    color: $white;
-    letter-spacing: 0;
-    font-size: 1.2rem;
-    transition:.3s all;
-  }
-
-  a:hover {
-    background-color:$red;
-  }
-}
-
-///////////////////////////
-
-////// NEW COMICS STYLES //////
-
-.new__comics {
-  .comic__listings {
+.search__results {
+  &__template__ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    img {
-      width: 100%;
+    justify-content: center;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0.3rem;
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+      transition: 0.2s all;
+    }
+
+    a:hover {
+      background-color: $dark-red;
+    }
+
+    #search__results__scroll {
+      font-size: 1.4rem;
+      font-weight: 600;
+      border: 0;
+
+      &:hover {
+        background-color: $dark-red;
+      }
     }
   }
 
-  &--ulist {
+  &__end {
+    padding: 3rem;
+    color: $white;
+    background-color: $red;
+    margin-right: 1rem;
+  }
+}
+
+////////////////////////////////////////////////
+
+//////////////// CHARACTER STYLES ///////////////
+
+//////// SINGLE CHARACTERS //////////
+
+.characters {
+  &__template__ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__cards {
+    width: 20rem;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    /*&:last-of-type {
+      margin-right: 0;
+    } */
+
+    img {
+      width: 100%;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    &__info {
+      flex: 1;
+      border-left: solid 1rem $red;
+      padding: 1rem;
+      background-color: black;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    &__p {
+      font-size: 1.2rem;
+      letter-spacing: 0.5rem;
+    }
+
+    a:link,
+    a:visited {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: 0.2s all;
+    }
+
+    a:hover {
+      color: $red;
+      transform: translateY(-1rem);
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+  }
+}
+
+//////////////////////////////////////
+
+//////////// COMICS  ///////////
+
+.comics {
+  &__tab {
     text-align: center;
     display: inline-flex;
     flex-direction: row;
@@ -401,14 +350,18 @@ border:.5rem solid $white;
       display: none;
     }
 
-    input[type="radio"]:checked + label {
+    input[type="radio"]:checked+label {
       background-color: $dark-red;
     }
 
     label {
       padding: 1.4rem;
-
       cursor: pointer;
+      transition: 0.2s all;
+
+      &:hover {
+        background-color: $darkest-red;
+      }
     }
 
     li {
@@ -419,48 +372,64 @@ border:.5rem solid $white;
       }
     }
   }
-}
 
-.character__template__hb {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  // justify-content: center;
-}
+  &__listings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
-.character__template--link {
-}
-
-.character__card {
-  width: 20rem;
-  text-transform: uppercase;
-  margin-bottom: 5rem;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-
-  &--info {
-    flex: 1;
-    border-left: solid 1rem $red;
-    padding: 1rem;
-    
-    background-color: black;
-
-    a {
-      letter-spacing: 0;
-      font-size: 1.2rem;
+    img {
+      width: 100%;
     }
   }
 
-  img {
-    width: 100%;
-  }
+  &__cards {
+    width: 20rem;
+    margin-bottom: 5rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
 
-  &--p {
-    font-size: 1.2rem;
-    letter-spacing: 0.5rem;
+    /* &:last-of-type {
+      margin-right: 0;
+    } */
+
+    img {
+      width: 100%;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    &__info {
+      flex: 1;
+      border-left: solid 1rem $red;
+      padding: 1rem;
+      background-color: black;
+      display: flex;
+      flex-direction: row;
+      color: $white;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+
+      a:link,
+      a:visited {
+        text-transform: uppercase;
+        padding: 0.5rem;
+        text-decoration: none;
+        border: 0.2rem solid white;
+        align-self: flex-end;
+        color: $white;
+        letter-spacing: 0;
+        font-size: 1.2rem;
+        transition: 0.3s all;
+      }
+
+      a:hover {
+        background-color: $red;
+      }
+    }
   }
 }
+
 /////////////////////
 
 ////// RANDOMIZE STYLES //////
@@ -468,8 +437,7 @@ border:.5rem solid $white;
 /////SORT SIZING ////
 
 .randomize {
-  &__again {
-  }
+  padding: 5rem;
 
   &__ul {
     display: flex;
@@ -480,7 +448,7 @@ border:.5rem solid $white;
   }
 
   &__image img {
-   width:100%;
+    width: 100%;
   }
 
   &__info {
@@ -492,26 +460,25 @@ border:.5rem solid $white;
 
   &__headings__group {
     display: flex;
+    align-items: center;
   }
 
   &__issue {
-    
     background-color: $red;
     font-weight: 700;
     color: $white;
     padding: 2rem;
     margin-right: 3rem;
-    font-size:3rem;
-    border-radius:100rem;
+    font-size: 3rem;
+
   }
 
   &__title {
-    font-size:2rem;
+    font-size: 2rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     color: $randomize-grey;
-  
   }
 
   &__date {
@@ -523,11 +490,9 @@ border:.5rem solid $white;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
- text-align:center;
-    
+    text-align: center;
 
     p {
-     
       text-transform: uppercase;
       letter-spacing: 0.5rem;
       padding: 1.6rem 2rem 1.6rem 2rem;
@@ -536,68 +501,50 @@ border:.5rem solid $white;
       color: $white;
       font-weight: 600;
       margin: 2rem 1rem 2rem 0;
-      
     }
   }
-
-  /* 
-
-  &__creators {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: $white;
-  } */ 
 
   &__links__btns {
     display: flex;
     justify-content: center;
-    font-size:1.6rem;
- 
-    
-    
+    font-size: 1.6rem;
+
     a:link,
     a:visited {
-     
       text-decoration: none;
-      transition:.3s all;
-
+      transition: 0.3s all;
     }
+
     a:hover,
     a:active {
-  
-      background-color:$grey;
+      background-color: $grey;
       text-decoration: none;
     }
   }
 
   &__link {
-    
     background-color: $randomize-grey;
     color: $white;
     font-weight: 900;
     border: 0;
     margin-right: 2rem;
-   
   }
 
   &__btn {
-  
-  font-size:1.6rem;
+    font-size: 1.6rem;
     background-color: $red;
     color: $white;
     font-weight: 900;
     border: 0;
-    transition:.3s all;
+    transition: 0.3s all;
 
-    
     &:hover {
-      
-      background-color:$dark-red;
+      background-color: $dark-red;
     }
   }
 }
+
+///////////////// FOOTER /////////////////
 
 .footer {
   color: $white;
@@ -609,65 +556,209 @@ border:.5rem solid $white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+//////////////////////////////////////////
+
+/* 
+56.25em = 900px
+75em = 1200px 
+112.5em = 1800px
+*/
+
+//1800px and up
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+  .logo_form {
+    max-width: 20rem;
   }
 }
 
-////// SEARCH RESULT STYLES //////
-.search__results__template__ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+//1200px and down
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
 
-#searchScroll {
-  font-size:1.4rem;
-  font-weight:600;
-  border:0;
-  
-  &:hover {
-    background-color:$dark-red;
+  .characters {
+    padding: 5rem;
+
+    &__template__ul {
+      justify-content: center;
+    }
+  }
+
+  .comics {
+    padding: 5rem;
+
+    &__listings {
+      justify-content: center;
+    }
   }
 }
 
-.search__links {
-  display:flex;
-  justify-content:center;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-align:center;
-  letter-spacing: .3rem;
+// 900px and down
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
 
-  
-  
-  
-  
-  a:link,a:visited,a:hover,a:active {
+// 600px and down
+@media only screen and (max-width: 37.5em) {
+  .primary__heading {
+    text-align: center;
+    border-right: 1rem solid $red;
+    display: flex;
+    justify-content: center;
 
-    text-decoration:none;
-
-
-    
+    &__tab {
+      display: flex;
+      justify-content: center;
+      border-right: 1rem solid $red;
+    }
   }
 
-  a:hover {
-    background-color:$dark-red;
+  .comics__listings {
+    margin-left: 3rem;
   }
- 
+
+  .characters__template__ul {
+    margin-left: 3rem;
+  }
+
+  .comics__cards__info {
+    display:flex;
+    flex-wrap:wrap;
+    text-align: center;
+    border-right: 1rem solid $red;
+  }
+
+  .comics__cards__info a:link,
+  .comics__cards__info a:visited {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex:1;
+  }
+
+  .comics__tab li:first-child {
+    margin-left: 1.5rem;
+  }
+
+
+
+  .randomize {
+
+    &__comic__whole {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__info {
+      margin: 0;
+    }
+
+    &__ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__issue {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    &__triple__items {
+      display: inline-block;
+    }
+
+    img {
+      max-width: 99%;
+    }
+
+    &__headings__group {
+      margin-bottom: 1.5rem;
+    }
+
+  }
+
+  .footer__area__marvel {
+    margin-bottom: 1rem;
+  }
+
+}
+
+// 480px and down
+@media only screen and (max-width: 30em) {
+  .characters__cards__info {
+    text-align: center;
+    border-right: 1rem solid $red;
+  }
+
+  .comics__tab {
+    display: inline-flex;
+    flex-direction: column;
+    flex-basis:100%;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom:1rem;
+     
+      &:first-child {
+        margin:0;
+      }
+
+      label {
+        padding: 1rem;
+        flex-basis:100%;
+      }
+    }
+  }
 }
 
 
-.search__results--end {
+// 420px and down
+@media only screen and (max-width: 20em) {
+  .randomize {
+    &__triple__items {
+      p {
+        margin: 2rem 0 2rem 0;
+      }
+    }
 
- padding: 3rem;
- color: $white;
- background-color: $red;
- margin-right:1rem;
+    &__links__btns {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 3rem;
 
+      a {
+        flex-grow: 1;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
 
+      button {
+        flex-grow: 1;
+      }
+    }
 
+    &__link {
+      margin-right: 0;
+    }
+  }
 }
-
-
-

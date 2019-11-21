@@ -1,80 +1,59 @@
 <!-- 
-SASS
-PREFIXES
-MEDIA QUERIES
-DRY CODE 
+What Tech Stack was used or what was the purpose of project/learning objectives. 
+
+PREFIXES/BROWSER CHECKS
+
+DRY CODE? 
+
 MINIFY CODE
 
+SHIV?
 
-webkit prefiixes and minifies 
+cookies?
 
-Jquery animations and css transitions 
+W3 STANDARDS. 2 errors 3 warnings. Warnings ignored. errors are for the tab section of comics nav but have cleared all other errors.
+CSS PASSED. 
 
-TIDY UP CSS and HTML 
+adding semantic html but not adding styling to it. Added header and main no class assignment. Cards would be too difficult to now push into a figure/caption format. Already got things like section class. 
 
-do success and fail and loading for request
-
-bundling  the scss so it minifies webkit prefixes etc 
-
-relook into BEM methodology 
-
-Where do you place forms (what needs to be encapsulated) so that it doesn't jump up the page again? I'm guessing this corresponds to the call via the ajax server, if placing it inside or outside of the script ID? Look into code. I think its because it then has to re-send the script and then re-load the layout and HTML content all over again, as opposed to just sending the ajax dto the server its also sending the HTML markdown to be constructed again if you include it  INSIDE of the script ID? Correct. It has to be outside of the SCRIPT and the UL. 
-
-
-check against w3c standards etc 
-
-fix messy character card one
-
-check scss again online 
-
-
-LIST TECHNOLOGIES USED? 
 
 -->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Every Story, Every Spider</title>
+  <title>Spider-Stories</title>
   <script src="https://kit.fontawesome.com/1198a80a23.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
 <body>
 
-  <section class="nav__section">
 
-    <a href="index.html" class="home__logo">
-      <div class="wordmark__logo">SPIDEY <i class="fas fa-spider"></i></div>
-      <!-- <img
-        src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1570015610/es_es_web_uyuohm.png" alt="brand_logo"
-        class="logo"> -->
-    </a>
 
-  </section>
-
-  <section class="comic__search__section">
+  <header>
+  <section class="search__area">
+    <section class="nav__section">
+      <a href="index.html" class="nav__logo">
+        <img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1573828147/_shadowAsset_2_f2oeay.png"
+          alt="Logo" class="logo_form">
+      </a>
+    </section>
     <div class="row">
-      <form class="comic__search">
-        <h2 class="comic__search--heading"> SHOW ME </h2>
-        <div class="comic__search--radios">
-          <ul class="comic__search--list">
+      <form class="search__area__form">
+        <h2 class="search__area__heading"> SHOW ME</h2>
+          <ul class="search__area__list">
             <li>
-              <input type="radio" id="characters" class="comic--radio" name="skills" value="characters">
+              <input type="radio" id="characters" class="search__area__radio__tab" name="skills" value="characters">
               <label for="characters">Characters</label>
             </li>
             <li>
-              <input type="radio" id="years" class="comic--radio" name="skills" value="years">
+              <input type="radio" id="years" class="search__area__radio__tab" name="skills" value="years">
               <label for="years">Years</label>
             </li>
-
-
-            <select name="years__chosen" class="years__options">
+            <select name="search__area__years__tab" class="search__area__years__options">
               <option value="1990">1990</option>
               <option value="1991">1991</option>
               <option value="1992">1992</option>
@@ -105,204 +84,141 @@ LIST TECHNOLOGIES USED?
               <option value="2017">2017</option>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
-
             </select>
-
-
-
-        </div>
         </ul>
-        <input class="comic__search--submit" type="submit" value="GO">
+        <input class="search__area__submit" type="submit" value="GO">
       </form>
     </div>
   </section>
+</header>
 
 
-  <section class="search">
 
+
+  <section class="search__results">
     <div class="row">
-
       <h1 class="primary__heading">Search Results</h1>
-
-      <div class="search__results">
-
-
+      <div class="search__results__container">
         <ul class="search__results__template__ul">
           <script id="search__results__template__script" type="text/x-handlebars-template">
             {{#each this }}
-      
-            <div class="character__card__one">
-              <a href="{{urls.0.url}}"  target="_blank" >
-
-                {{#unless urls.0.url}} 
-                      <a href=" http://marvel.com" target="_blank" > 
-                      {{/unless}}
-            
-                <div class="character__card--img">  
-          
-                  <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-                   alt="{{name}}"> 
-                </div> 
-          
-                <div class="character__card--info">
-                  
-                   
-
-
-
-                    <h6 class="sixth__heading"> {{name}}  </h6>
-                  {{#unless name}}
-                 <h6 class="sixth__heading">{{title}}</h6> 
-                  {{/unless}}
-                                
-              
-                </div>
-          
-                </div>
-              </a>
-                {{/each}}
-             
+              <div class="characters__cards">
+                <a href="{{urls.0.url}}"  target="_blank" >
+                  {{#unless urls.0.url}} 
+                        <a href=" http://marvel.com" target="_blank" > 
+                        {{/unless}}
+                  <div class="characters__cards__img">  
+                    <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
+                     alt="{{name}}"> 
+                  </div> 
+                  <div class="characters__cards__info">
+                      <h6 class="sixth__heading"> {{name}}  </h6>
+                    {{#unless name}}
+                   <h6 class="sixth__heading">{{title}}</h6> 
+                    {{/unless}}
+                  </div>
+                  </div>
+                </a>
+                  {{/each}}
             </script>
         </ul>
-
       </div>
-
-      <div class="search__links">
-        <a href="https://www.marvel.com" class="search__results--end" target="_blank">
-         
-            
-            <p>Discover more at marvel.com</p>
-          
+      <div class="search__results__links">
+        <a href="https://www.marvel.com" class="search__results__end" target="_blank">
+          <p>Discover more at marvel.com</p>
         </a>
-
-
-        <a href="index.html" class="search__results--end" >
-          
-            <p> Home </p>
-       
+        <a href="index.html" class="search__results__end">
+          <p> Home </p>
         </a>
-
-        <button class="btn search__results--end" id="searchScroll">  Search again </button>
-        
-          
-      
-        
+        <button class="btn search__results__end" id="search__results__scroll"> Search again </button>
       </div>
     </div>
-
   </section>
 
-
-
-
-
-
+  <main>
   <section class="characters">
     <div class="row">
       <h1 class="primary__heading">
         spider-verse characters
       </h1>
-      <ul class="character__template__hb">
-        <script id="character__template" type="text/x-handlebars-template">
+      <ul class="characters__template__ul">
+        <script id="characters__template" type="text/x-handlebars-template">
           {{#each this}}
-
-      
-
-
-
-
-
-
-    <div class="character__card__one">
-      <a href="{{urls.2.url}}" target="_blank" >
-        {{#unless urls.2.url}} 
-              <a href="http://marvel.com" target="_blank" > 
-              {{/unless}}
-      <div class="character__card--img">  
-         
-        <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-        alt="{{name}}">  
+      <div class="characters__cards">
+        <a href="{{urls.2.url}}" target="_blank">
+          {{#unless urls.2.url}}
+          <a href="http://marvel.com" target="_blank">
+            {{/unless}}
+            <div class="characters__cards__img">
+              <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
+            </div>
+            <div class="characters__cards__info">
+              <h6 class="sixth__heading"> {{name}} </h6>
+              <p class="characters__cards__p"> {{ comics.available}} issues </p>
+            </div>
       </div>
-
-      <div class="character__card--info">
-      
-          
-        <h6 class="sixth__heading"> {{name}}  </h6>
-
-      <p class="character__card--p"> {{ comics.available}} issues </p> 
-    
-      </div>
-
-      </div>
-    </a>
-      {{/each}}
-
-    </script>
+      </a>
+            {{/each}}
+        </script>
       </ul>
     </div>
   </section>
 
-  <section class="new__comics">
+  <section class="comics">
     <div class="row">
       <h1 class="primary__heading__tab">
         new spideys this:
-        <ul class="new__comics--ulist">
-          <li> <input type="radio" id="week__new" class="comic--radio" name="input-setting" value="weeks"
-              checked="checked">
+        <ul class="comics__tab">
+          <li> <input type="radio" id="week__new" class="comic--radio" name="input-setting" value="weeks">
             <label for="week__new"> WEEK</label> </li>
-          <li> <input type="radio" id="month__new" class="comic--radio" name="input-setting" value="months">
+          <li> <input type="radio" id="month__new" class="comic--radio" name="input-setting" value="months"
+              checked="checked">
             <label for="month__new"> MONTH </label>
           </li>
         </ul>
       </h1>
-      <ul class="comic__listings">
+      <ul class="comics__listings">
         <script id="comic__book__template" type="text/x-handlebars-template">
           {{#each this}}
-      <div class="character__card">
-        <div class="character__card--img">  
-          <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
-          alt="{{title}}"> 
-        </div>
-        <div class="character__card__comic--info">
-          <h6 class="sixth__heading"> {{title}}  </h6>
-       
-        <a href="{{urls.0.url}}" target="_blank"> more</a> 
-        </div>
-        </div>
-        {{/each}}
-      </script>
+              <div class="comics__cards">
+                <div class="comics__cards__img">  
+                  <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
+                  alt="{{title}}"> 
+                </div>
+                <div class="comics__cards__info">
+                  <h6 class="sixth__heading"> {{title}}  </h6>
+                <a href="{{urls.0.url}}" target="_blank"> more</a> 
+                </div>
+                </div>
+                {{/each}}
+              </script>
       </ul>
+    </div>
   </section>
 
   <section class="randomize">
     <div class="row">
-
       <h1 class="primary__heading"> spider issues of 2019 </h1>
       <form class="randomize__again">
         <ul class="randomize__ul">
-
           <script id="comic__book__randomize__template" type="text/x-handlebars-template">
-          <div class="randomize__comic__whole">
+            <div class="randomize__comic__whole">
         <div class="randomize__image"><img src="{{thumbnail.path}}/detail.{{thumbnail.extension}}" alt="{{title}}">
-         
         </div>
         <div class="randomize__info">
-          
-
           <div class="randomize__headings__group">
           <div class="randomize__issue">#{{issueNumber}}</div>
           <div class="randomize__title">{{title}}
-              <div class="randomize__date">{{formatDate dates.0.date day="numeric" month="long" year="numeric"}}</div>
-
+              <div class="randomize__date">
+                {{formatDate dates.0.date day="numeric" month="long" year="numeric"}}
+              </div>
           </div>
         </div>
-        
         <div class="randomize__triple__items">
-          
-        <p> {{format}} Format </p>  
-      <p> ${{prices.0.price}} </p>  
-        <p>{{pageCount}}  PAGES </p>  
-          <p> {{characters.returned}} Character(s) </p>   
+        <p> {{format}} Format </p>
+        <p> ${{prices.0.price}} </p>
+        <p>{{pageCount}} PAGES </p>
+        <p> {{characters.returned}} Character(s) </p>
          <P> 
            {{#if variants}}    {{variants.length}} Variant(s)
            {{/if}}
@@ -310,45 +226,33 @@ LIST TECHNOLOGIES USED?
            NO VARIANTS </p>
            {{/unless}}
        <p>{{creators.returned}} Contributors </p>
-      
-       
         </div>
-     
         <div class="randomize__links__btns">
-         
-            <a href="{{urls.0.url}}" class="btn randomize__link"  target="_blank" >Read more </a> <button class="btn randomize__btn">Randomize </button> 
-
+            <a href="{{urls.0.url}}" class="btn randomize__link"  target="_blank" >Read</a> <button class="btn randomize__btn">Randomize </button> 
             </div>
-        
         </div>
-      </div>
-    
+        </div>
         </script>
         </ul>
       </form>
+      </div>
+  </section> 
 
-
-  </section>
-
+</main>
   <section class="footer">
     <div class="row">
       <div class="footer__area">
         <p class="footer__area__marvel"> </p>
-        <p> Made by <a href="google.com">joshua.tree.ctrl</a> </p>
-
+        <p> Personal project by <a href="https://github.com/joshua-tree-ctrl" target="_blank">joshua.tree.ctrl</a> </p>
       </div>
-      <p>This is a personal project as part of a learning course. </p>
-
     </div>
   </section>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="assets/js/config.js" type="text/javascript"></script>
-  <script src="node_modules/crypto-js/crypto-js.js" type="text/javascript"></script>
-  <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
-  <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js" type="text/javascript"></script>
-  <script src="assets/js/main.js" type="text/javascript"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="node_modules/crypto-js/crypto-js.js"></script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>

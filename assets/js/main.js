@@ -43,13 +43,13 @@ HandlebarsIntl.registerWith(Handlebars);
 
 
 //////////////////////// HIDE NON-DYNAMIC SEARCH CONTENT HEADER/CTAS  ////////////////////////
-$(".search")
+$(".search__results")
   .children()
   .children(".primary__heading")
   .hide();
 
-$(".search")
-  .find(".search__results--end")
+$(".search__results")
+  .find(".search__results__end")
   .hide();
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,15 +59,16 @@ $(".search")
 
 
 ////////////////// CLICK EVENT - STORE RADIO BUTTON SELECTED VALUE INTO VAR - SHOW/HIDE YEARS  //////////////////
-$(".comic__search--list").on("click", "li", function() { 
+$(".search__area__list").on("click", "li", function() { 
   // CLICK Event, with added event delegation for list items. There are two list items. 
   searchSelect = $(this).children().val(); // For (this) list item, find the children of this list item,  (input and label), and find the VAL (value of the input).
   //Toggle the hide/show of the years options 1990 - 2019 
   if (searchSelect === "years") {
-    $(".years__options").show();
+    $(".search__area__years__options").show('fast');
   } else if (searchSelect === "characters") {
-    $(".years__options").hide();
+    $(".search__area__years__options").hide('fast');
   }
+
 });
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -85,15 +86,20 @@ $(".comic__search--list").on("click", "li", function() {
 
 ////////////////////////////////// SEARCH FUNCTION SUBMIT   ///////////////////////////////////////////
 
-$(".comic__search").on("submit", function(e) {
+$(".search__area__form").on("submit", function(e) {
   // ON SUBMIT
   e.preventDefault(); // Prevent default submit action/behaviour
-  $(".comic__search--list")
+  $(".search__area__list")
     .find("input")
     .prop("checked", false); //Find all inputs that have been clicked and deselect them on submit so its a blank start when they go to search again (no checked boxes)
-  $(".character__card__one").remove(); // Remove pre-existing content from the page so that we can add the new search content
+  $(".characters__cards").remove(); // Remove pre-existing content from the page so that we can add the new search content
   var url; //Declaring
-  var yearChoice = $(".years__options").val();
+  var yearChoice = $(".search__area__years__options").val();
+ 
+  $(".characters").remove(); //Remove homepage content to make way for search result content
+  $(".comics").remove(); //Remove homepage content to make way for search result content
+  $(".randomize").remove(); //Remove homepage content to make way for search result content
+  
   // Store year chosen from dropdown toggle in variable for later use on submit
   //Setting character HTTP request link
   var characterURL =
@@ -143,16 +149,12 @@ $(".comic__search").on("submit", function(e) {
         .children()
         .remove(".loading"); //On successful retrieval of data, remove the loading class (spinny)
 
-      $(".search__results--end").show(); // Show class which will contain static HTML content for the search (ie links, headers)
-      $(".search")
+      $(".search__results__end").show(); // Show class which will contain static HTML content for the search (ie links, headers)
+      $(".search__results")
         .children()
         .children(".primary__heading")
         .show(); // Show class which will contain static HTML content for the search (ie links, headers)
       console.log(responseSearch);
-
-      $(".characters").remove(); //Remove homepage content to make way for search result content
-      $(".new__comics").remove(); //Remove homepage content to make way for search result content
-      $(".randomize").remove(); //Remove homepage content to make way for search result content
 
   ////////////////////////////////// HANDLEBARS TEMPLATE ONSUBMIT ///////////////////////////////////////////
       var source = $("#search__results__template__script").html(); //Retrieve script ID area of HTML
@@ -189,7 +191,7 @@ $(".comic__search").on("submit", function(e) {
 
 
 ////////////////////////////////// SCROLL TO TOP SEARCH ///////////////////////////////////////////
-$('.search__links').on('click', '#searchScroll', function (e) {
+$('.search__results__links').on('click', '#search__results__scroll', function (e) {
   //On click of this button - event delegation as it is initially hidden, so #searchScroll.
   e.preventDefault(); //Prevent default behaviour
   // Select HTML and body, animate the scroll within the html/body to scrollTop, to the nav section by class .nav__section. 1000 is anim speed. 
@@ -234,8 +236,8 @@ $.ajax({
     hash,
   success: function(response) {
     console.log(response);
-    $(".character__template__hb").children().remove(".loading");
-    var source = $("#character__template").html();
+    $(".characters__template__ul").children().remove(".loading");
+    var source = $("#characters__template").html();
     var template = Handlebars.compile(source);
     var characterData = response.data.results;
     //All of the above follows the same procedure with the HTTP request and Handlebars templating as the search result above. However, this time, the URL request is fetching a specific search of Spider-Man characters. I then create an array which I place the chosen characters (objects) into this array from the http request results. Then in the HTML script for the handlebars section, a handlebar helper is used to loop through each object in this array. FOR EACH - display {{name}}, so on and so forth
@@ -247,11 +249,11 @@ $.ajax({
       characterData[3]
     ];
     var displayData = template(hayArrayObj);
-    $(".character__template__hb").append(displayData);
+    $(".characters__template__ul").append(displayData);
   },
 
   beforeSend: function() {
-    $(".character__template__hb").prepend(
+    $(".characters__template__ul").prepend(
       '<div class="loading"><img src="assets/img/ajax-loader.gif" alt="Loading" /></div>'
     );
   },
@@ -299,7 +301,7 @@ function callComicDates(paramDate) {
       "&hash=" +
       hash,
     success: function(responseComics) {
-      $(".comic__listings")
+      $(".comics__listings")
         .children()
         .remove(".loading");
 
@@ -307,11 +309,11 @@ function callComicDates(paramDate) {
       var template = Handlebars.compile(source);
       var comicData = responseComics.data.results;
       var displayData = template(comicData);
-      $(".comic__listings").append(displayData);
+      $(".comics__listings").append(displayData);
     },
 
     beforeSend: function() {
-      $(".comic__listings").prepend(
+      $(".comics__listings").prepend(
         '<div class="loading"><img src="assets/img/ajax-loader.gif" alt="Loading" /></div>'
       );
     },
@@ -325,21 +327,21 @@ function callComicDates(paramDate) {
 ///////////////// MONTH AND WEEK FUNCTION CALL ON PAGE LOAD AND IF CHECK //////////////
 //On initial load of page - check to see which toggle is checked - new week or new month. By default you have added html to make week 'checked'. But this is to say whatever is checked, to empty the content and run the function call again. 
 if ($("#week__new").is(":checked")) {
-  $(".character__card").empty();
+  $(".comics__card").empty();
   callComicDates("thisWeek");
 } else if ($("#month__new").is(":checked")) {
-  $(".character__card").empty();
+  $(".characters__cards").empty();
   callComicDates("thisMonth");
 }
 
 //////////////// CLICK FUNCTION FOR MONTH AND WEEK USER INTERACTION ///////////////////////////////
 //Above was for initial load of the page, this is for user interaction. On click, if event target is week__new ID, remove character card and recall function for thisweek as the parameter, vice versa. 
-$(".new__comics--ulist").on("click", function(e) {
+$(".comics__tab").on("click", function(e) {
   if ($(e.target).is("#week__new")) {
-    $(".character__card").remove();
+    $(".comics__cards").remove();
     callComicDates("thisWeek");
   } else if ($(e.target).is("#month__new")) {
-    $(".character__card").remove();
+    $(".comics__cards").remove();
     callComicDates("thisMonth");
   }
 });
