@@ -31,7 +31,7 @@ HandlebarsIntl.registerWith(Handlebars);
 ///////////////////////////////////////////////////////
 
 
-
+randomizeSpider(); //calling function on page load 
 
 ///////////////////////////////////////////////////////// SEARCH SECTION  /////////////////////////////////////////////////////////
 
@@ -417,7 +417,7 @@ function randomizeSpider() {
     }
   });
 }
-randomizeSpider(); //calling function on page load 
+
 
 
 
