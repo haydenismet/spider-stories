@@ -426,9 +426,9 @@ randomizeSpider(); //calling function on page load
 $(".randomize__again").on("click", function(e) {
   e.preventDefault();
 //On submit, find (this) whole comic section and remove it, and re-call the function. 
-  $(this)
+  /* $(this)
     .find(".randomize__comic__whole")
-    .remove();
+    .remove(); */ 
 
   randomizeSpider();
 });
