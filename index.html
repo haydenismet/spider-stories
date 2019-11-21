@@ -146,9 +146,6 @@ adding semantic html but not adding styling to it. Added header and main no clas
           {{#each this}}
       <div class="characters__cards">
         <a href="{{urls.2.url}}" target="_blank">
-          {{#unless urls.2.url}}
-          <a href="http://marvel.com" target="_blank">
-            {{/unless}}
             <div class="characters__cards__img">
               <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
             </div>
