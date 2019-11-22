@@ -119,6 +119,8 @@ a:visited {
   margin-top: 5rem;
 }
 
+
+
 ///////////////////////////
 
 ////// NAV STYLES //////
@@ -727,6 +729,10 @@ a:visited {
               justify-content: center;
     }
   }
+
+  .search__results {
+    padding:5rem;
+  }
 }
 
 // 900px and down
@@ -734,10 +740,20 @@ a:visited {
   html {
     font-size: 50%;
   }
+
+  .search__results__links {
+    flex-direction:column;
+    
+  }
+
+  .search__results__end {
+    margin-bottom:3rem;
+  }
 }
 
 // 600px and down
 @media only screen and (max-width: 37.5em) {
+
   .primary__heading {
     text-align: center;
     border-right: 1rem solid $red;
@@ -759,6 +775,9 @@ a:visited {
     }
   }
 
+  .search__title {
+    margin-top:5rem;
+  }
   .comics__listings {
     margin-left: 3rem;
   }

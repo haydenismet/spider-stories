@@ -531,11 +531,17 @@ a:visited {
     .comics__listings {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-      justify-content: center; } }
+      justify-content: center; }
+  .search__results {
+    padding: 5rem; } }
 
 @media only screen and (max-width: 56.25em) {
   html {
-    font-size: 50%; } }
+    font-size: 50%; }
+  .search__results__links {
+    flex-direction: column; }
+  .search__results__end {
+    margin-bottom: 3rem; } }
 
 @media only screen and (max-width: 37.5em) {
   .primary__heading {
@@ -555,6 +561,8 @@ a:visited {
       -ms-flex-pack: center;
       justify-content: center;
       border-right: 1rem solid #a22d23; }
+  .search__title {
+    margin-top: 5rem; }
   .comics__listings {
     margin-left: 3rem; }
   .characters__template__ul {
