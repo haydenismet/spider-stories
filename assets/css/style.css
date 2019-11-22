@@ -109,6 +109,7 @@ a:visited {
 .search__area {
   background-image: url("https://res.cloudinary.com/fluxcapacitor/image/upload/v1573753684/spider_big_bg_pfzmda.jpg");
   background-size: 60%;
+  background-attachment: fixed;
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
   display: -webkit-box;
