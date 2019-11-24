@@ -31,7 +31,12 @@ HandlebarsIntl.registerWith(Handlebars);
 ///////////////////////////////////////////////////////
 
 
-randomizeSpider(); //calling function on page load 
+$(document).ready(function(){
+  randomizeSpider(); //calling function on page load 
+});
+
+
+
 
 ///////////////////////////////////////////////////////// SEARCH SECTION  /////////////////////////////////////////////////////////
 
@@ -369,8 +374,6 @@ $(".randomize")
 ////////// RANDOMIZE FUNCTION  ////////////
 function randomizeSpider() {
   //todayIssue storing http request url for the current year. 
-
-
     //AJAX request is same as previous apart from the randomization features commented below. 
   $.ajax({
     type: "GET",
