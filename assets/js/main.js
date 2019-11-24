@@ -369,16 +369,12 @@ $(".randomize")
 ////////// RANDOMIZE FUNCTION  ////////////
 function randomizeSpider() {
   //todayIssue storing http request url for the current year. 
-/*  var todayIssue =
-    "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=false&dateRange=" +
-    y +
-    "-01-01%2C" +
-    y +
-    "-12-31&title=The%20Amazing%20Spider-Man&orderBy=title&limit=99&apikey=4d1d2b3e23717927e1ae35fb9dedb99b"; */
+
 
     //AJAX request is same as previous apart from the randomization features commented below. 
   $.ajax({
     type: "GET",
+   
     url:
       "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=false&dateRange=" +
       y +

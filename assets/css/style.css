@@ -388,7 +388,8 @@ a:visited {
       background-color: #a22d23; }
 
 .randomize {
-  padding: 5rem; }
+  padding: 5rem;
+  cursor: pointer; }
   .randomize__ul {
     display: -webkit-box;
     display: -ms-flexbox;
