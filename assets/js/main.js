@@ -368,7 +368,14 @@ $(".randomize")
   .find("h1")
   .html("Spider Issues of " + y); // y being dynamic year date. 
 
-
+  if ($('.randomize')) {
+    console.log('exists');
+    randomizeSpider(); //calling function on page load 
+  } else  {
+    $('.randomize').html('<h1> No load</h1>');
+  }
+  
+  
 ////////// RANDOMIZE FUNCTION  ////////////
 function randomizeSpider() {
   //todayIssue storing http request url for the current year. 
@@ -431,7 +438,7 @@ $(this)
 });
 
 
-randomizeSpider(); //calling function on page load 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
