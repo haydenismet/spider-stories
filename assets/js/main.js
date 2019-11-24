@@ -157,7 +157,7 @@ $(".search__area__form").on("submit", function(e) {
         .children()
         .children(".primary__heading")
         .show(); // Show class which will contain static HTML content for the search (ie links, headers)
-      console.log(responseSearch);
+     
 
   ////////////////////////////////// HANDLEBARS TEMPLATE ONSUBMIT ///////////////////////////////////////////
       var source = $("#search__results__template__script").html(); //Retrieve script ID area of HTML
@@ -238,7 +238,7 @@ $.ajax({
     "&hash=" +
     hash,
   success: function(response) {
-    console.log(response);
+   
     $(".characters__template__ul").children().remove(".loading");
     var source = $("#characters__template").html();
     var template = Handlebars.compile(source);
@@ -253,7 +253,7 @@ $.ajax({
     ];
     var displayData = template(hayArrayObj);
     $(".characters__template__ul").append(displayData);
-    console.log(hayArrayObj);
+    
   },
 
   beforeSend: function() {
@@ -358,7 +358,7 @@ $(".comics__tab").on("click", function(e) {
 
 
 
-randomizeSpider();
+
 
 //////////////////////////////////////////////// RANDOMIZE COMIC /////////////////////////////////////////////////////////////////////////////
 
@@ -402,7 +402,7 @@ function randomizeSpider() {
       var displayData = template(characterData);
       $(".randomize__ul").append(displayData);
 
-        console.log(randomIssueIs);
+        
     },
     beforeSend: function() {
       $(".randomize__ul").prepend(
@@ -415,7 +415,7 @@ function randomizeSpider() {
   }); 
 }
 
-
+randomizeSpider();
 
 /////////////////// USER INTERACTION CLICK TO RANDOMIZE AGAIN ////////////////////////////////
 
