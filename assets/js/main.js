@@ -417,18 +417,16 @@ function randomizeSpider() {
 
 
 
-
 /////////////////// USER INTERACTION CLICK TO RANDOMIZE AGAIN ////////////////////////////////
 
-$(".randomize").on("click", function(e) {
+$(".randomize").on("click", '.randomize__btn', function(e) {
+
   e.preventDefault();
 //On submit, find (this) whole comic section and remove it, and re-call the function. 
-console.log('clickity click'); 
-$(this)
-    .find(".randomize__comic__whole")
-    .remove();
 
-  randomizeSpider();
+$(this).parents('.randomize__comic__whole').remove();
+
+  randomizeSpider(); 
 });
 
 
