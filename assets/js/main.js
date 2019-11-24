@@ -358,7 +358,7 @@ $(".comics__tab").on("click", function(e) {
 
 
 
-
+randomizeSpider();
 
 //////////////////////////////////////////////// RANDOMIZE COMIC /////////////////////////////////////////////////////////////////////////////
 
@@ -368,12 +368,6 @@ $(".randomize")
   .find("h1")
   .html("Spider Issues of " + y); // y being dynamic year date. 
 
-  if ($('.randomize')) {
-    console.log('exists');
-    randomizeSpider(); //calling function on page load 
-  } else  {
-    $('.randomize').html('<h1> No load</h1>');
-  }
   
   
 ////////// RANDOMIZE FUNCTION  ////////////
@@ -399,11 +393,11 @@ function randomizeSpider() {
         .children()
         .remove(".loading");
 
-     // var todayIssueLength = todayIssue.data.results.length;
-    //  var randomNumber = Math.floor(Math.random() * todayIssueLength); //taking the length of results array from the ajax request and randomizing it to a whole number. That number will correspond to an object in the array which contains a comic issue of 2019. 
+      var todayIssueLength = todayIssue.data.results.length;
+      var randomNumber = Math.floor(Math.random() * todayIssueLength); //taking the length of results array from the ajax request and randomizing it to a whole number. That number will correspond to an object in the array which contains a comic issue of 2019. 
       var source = $("#comic__book__randomize__template").html();
       var template = Handlebars.compile(source);
-      var randomIssueIs = todayIssue.data.results[0];//[randomNumber];//placing randomized number of array length into the ajax request to pick that comic object in the array via this random number [randomnumber]
+      var randomIssueIs = todayIssue.data.results[randomNumber];//placing randomized number of array length into the ajax request to pick that comic object in the array via this random number [randomnumber]
       var characterData = randomIssueIs;
       var displayData = template(characterData);
       $(".randomize__ul").append(displayData);
