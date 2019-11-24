@@ -423,10 +423,11 @@ function randomizeSpider() {
 
 /////////////////// USER INTERACTION CLICK TO RANDOMIZE AGAIN ////////////////////////////////
 
-$(".randomize__again").on("submit", function(e) {
+$(".randomize").on("click", function(e) {
   e.preventDefault();
 //On submit, find (this) whole comic section and remove it, and re-call the function. 
-  $(this)
+console.log('clickity click'); 
+$(this)
     .find(".randomize__comic__whole")
     .remove();
 
