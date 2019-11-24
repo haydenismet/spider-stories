@@ -521,6 +521,8 @@ a:visited {
 @media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%; }
+  .search__area {
+    background-attachment: scroll; }
   .characters {
     padding: 5rem; }
     .characters__template__ul {
@@ -692,3 +694,6 @@ a:visited {
       flex-grow: 1; }
   .randomize__link {
     margin-right: 0; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS */ }

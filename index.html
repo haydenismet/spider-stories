@@ -1,19 +1,26 @@
-<!-- 
-What Tech Stack was used or what was the purpose of project/learning objectives. 
-figure out how to clean up commits or atleast commit messages 
-PREFIXES/BROWSER CHECKS
-MINIFY CODE
-SHIV?
-cookies?
+<!--
+WRITE OVERALL TECH STACK USED AND PURPOSE OF PROJECT/LEARNING OBJECTIVES. 
+
+CLEAN UP COMMITS/COMMIT MESSAGES.
+
 W3 STANDARDS. 2 errors 3 warnings. Warnings ignored. errors are for the tab section of comics nav but have cleared all other errors.
-CSS PASSED. 
-remove console logs/comments 
-seems usable across all browsers EXCEPT IE11 cus its rubbish 
-MOBILE - RANDOMIZE NOT LOADING, SEARCH RESULTS AREA OK? BUTTONS LIKE BROWSE AGAIN SEEM OFF. 
-add read more etc to search result items. 
-fix read link button randomize 
-prefix parrallax and also disabkle it on mobile/tablet 
-hoist functions?
+W3 - CSS PASSED. 
+
+BROWSER CHECKS
+FIREFOX - OK
+CHROME - OK 
+IE11 - AWFUL. NO RANDOMIZE
+SAFARI - NO RANDOMIZE
+ALL MOBILE BROWSERS - NO RANDOMIZE 
+ANDROID - OK 
+
+MINIFY CODE?
+
+COOKIES?
+
+REMOVE UNNECESSARY CONSOLE LOGS 
+
+HOIST FUNCTION CALLS?
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +29,12 @@ hoist functions?
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spider-Stories</title>
   <script src="https://kit.fontawesome.com/1198a80a23.js" crossorigin="anonymous"></script>
+ <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
 </head>
 
 <body>
@@ -112,7 +123,9 @@ hoist functions?
                       <h6 class="sixth__heading"> {{name}}  </h6>
                     {{#unless name}}
                    <h6 class="sixth__heading">{{title}}</h6> 
+                    
                     {{/unless}}
+                    
                   </div>
                   </div>
                 </a>
@@ -150,6 +163,7 @@ hoist functions?
             <div class="characters__cards__info">
               <h6 class="sixth__heading"> {{name}} </h6>
               <p class="characters__cards__p"> {{ comics.available}} issues </p>
+              
             </div>
           </a>
       </div>
@@ -244,6 +258,7 @@ hoist functions?
       </div>
     </div>
   </section>
+  
   <script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
