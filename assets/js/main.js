@@ -31,9 +31,7 @@ HandlebarsIntl.registerWith(Handlebars);
 ///////////////////////////////////////////////////////
 
 
-$(document).ready(function(){
-  randomizeSpider(); //calling function on page load 
-});
+
 
 
 
@@ -377,7 +375,6 @@ function randomizeSpider() {
     //AJAX request is same as previous apart from the randomization features commented below. 
   $.ajax({
     type: "GET",
-   
     url:
       "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=false&dateRange=" +
       y +
@@ -414,7 +411,7 @@ function randomizeSpider() {
     error: function() {
       alert("There was an error getting marvel data.");
     }
-  });
+  }); 
 }
 
 
@@ -434,7 +431,7 @@ $(this)
 });
 
 
-
+randomizeSpider(); //calling function on page load 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
