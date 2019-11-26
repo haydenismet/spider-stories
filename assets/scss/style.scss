@@ -344,9 +344,7 @@ a:visited {
     -ms-flex-direction: column;
     flex-direction: column;
 
-    /*&:last-of-type {
-      margin-right: 0;
-    } */
+  
 
     img {
       width: 100%;
@@ -472,10 +470,6 @@ a:visited {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-
-    /* &:last-of-type {
-      margin-right: 0;
-    } */
 
     img {
       width: 100%;
@@ -792,6 +786,7 @@ a:visited {
 
   .characters__template__ul {
     margin-left: 3rem;
+    
   }
 
   .comics__cards__info {
@@ -900,6 +895,7 @@ a:visited {
   .characters__cards__info {
     text-align: center;
     border-right: 1rem solid $red;
+    
   }
 
   .comics__tab {
@@ -979,40 +975,54 @@ a:visited {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS */
-html {
-  
-}
+html {}
 
-body {
- 
-}
+body {}
 
-main {
-  
- 
-}
+main {}
 
 .primary__heading {
-  margin-top:10rem;
+  margin-top: 5rem;
+  margin: 5rem auto 5rem auto;
 }
+
+.characters {}
 
 .characters__template__ul {
- 
-}
-
-.comics__listings {
- 
-}
-
-.comics__cards {
-
+//  margin: auto;
 }
 
 .characters__cards {
+  display: block;
+ // width: auto;
+
+ a:link {
+   display:block;
+ }
+
  
 
 }
 
+.characters__cards__info {
+ // display: block;
+ // flex: 0 0 auto;
+
+}
+
+.comics {
+}
+.comics__listings {}
 
 
+.comics__cards {
+display:block;
+}
+
+ 
+
+ 
+
+
+  
 }
