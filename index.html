@@ -1,34 +1,26 @@
 <!--
 WRITE OVERALL TECH STACK USED AND PURPOSE OF PROJECT/LEARNING OBJECTIVES. 
-
-BROWSER CHECKS
-FIREFOX DEVELOPER - OK - CHECK ON MAC
-FIREFOX REGULAR - OK - CHECK ON MAC 
-CHROME - OK 
-IE11 - AWFUL. NO RANDOMIZE
-SAFARI - NO RANDOMIZE - FIXED
-ALL MOBILE BROWSERS - NO RANDOMIZE - SHOULD BE FIXED.
-ANDROID - OK 
-EDGE - OK 
-OPERA - OK 
+write limit to 10 for browser speed
+write limit or restrictions due to api restrictions
 
 CLEAN UP COMMITS/COMMIT MESSAGES.
 
-TIDY IE CSS
 
-MINIFY CODE?
 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spider-Stories</title>
   <script src="https://kit.fontawesome.com/1198a80a23.js" crossorigin="anonymous"></script>
- <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
@@ -39,17 +31,17 @@ MINIFY CODE?
 
 
   <header>
-   
-  <section class="search__area">
-    <section class="nav__section">
-      <a href="index.html" class="nav__logo">
-        <img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1573828147/_shadowAsset_2_f2oeay.png"
-          alt="Logo" class="logo_form">
-      </a>
-    </section>
-    <div class="row">
-      <form class="search__area__form">
-        <h2 class="search__area__heading"> SHOW ME</h2>
+
+    <section class="search__area">
+      <section class="nav__section">
+        <a href="index.html" class="nav__logo">
+          <img src="https://res.cloudinary.com/fluxcapacitor/image/upload/v1573828147/_shadowAsset_2_f2oeay.png"
+            alt="Logo" class="logo_form">
+        </a>
+      </section>
+      <div class="row">
+        <form class="search__area__form">
+          <h2 class="search__area__heading"> SHOW ME</h2>
           <ul class="search__area__list">
             <li>
               <input type="radio" id="characters" class="search__area__radio__tab" name="skills" value="characters">
@@ -91,12 +83,12 @@ MINIFY CODE?
               <option value="2018">2018</option>
               <option value="2019">2019</option>
             </select>
-        </ul>
-        <input class="search__area__submit" type="submit" value="GO">
-      </form>
-    </div>
-  </section>
-</header>
+          </ul>
+          <input class="search__area__submit" type="submit" value="GO">
+        </form>
+      </div>
+    </section>
+  </header>
 
 
 
@@ -144,15 +136,15 @@ MINIFY CODE?
   </section>
 
   <main>
-  <section class="characters">
-    <div class="row">
-   
-      <h1 class="primary__heading">
-        spider-verse characters
-      </h1>
-      <ul class="characters__template__ul">
-        <script id="characters__template" type="text/x-handlebars-template">
-          {{#each this}}
+    <section class="characters">
+      <div class="row">
+
+        <h1 class="primary__heading">
+          spider-verse characters
+        </h1>
+        <ul class="characters__template__ul">
+          <script id="characters__template" type="text/x-handlebars-template">
+            {{#each this}}
       <div class="characters__cards">
         <a href="{{urls.2.url}}" target="_blank">
 
@@ -169,26 +161,26 @@ MINIFY CODE?
       
             {{/each}}
         </script>
-      </ul>
-    </div>
-  </section>
-
-  <section class="comics">
-    <div class="row">
-      <h1 class="primary__heading__tab">
-        new spideys this:
-        <ul class="comics__tab">
-          <li> <input type="radio" id="week__new" class="comic--radio" name="input-setting" value="weeks">
-            <label for="week__new"> WEEK</label> </li>
-          <li> <input type="radio" id="month__new" class="comic--radio" name="input-setting" value="months"
-              checked="checked">
-            <label for="month__new"> MONTH </label>
-          </li>
         </ul>
-      </h1>
-      <ul class="comics__listings">
-        <script id="comic__book__template" type="text/x-handlebars-template">
-          {{#each this}}
+      </div>
+    </section>
+
+    <section class="comics">
+      <div class="row">
+        <h1 class="primary__heading__tab">
+          new spideys this:
+          <ul class="comics__tab">
+            <li> <input type="radio" id="week__new" class="comic--radio" name="input-setting" value="weeks">
+              <label for="week__new"> WEEK</label> </li>
+            <li> <input type="radio" id="month__new" class="comic--radio" name="input-setting" value="months"
+                checked="checked">
+              <label for="month__new"> MONTH </label>
+            </li>
+          </ul>
+        </h1>
+        <ul class="comics__listings">
+          <script id="comic__book__template" type="text/x-handlebars-template">
+            {{#each this}}
               <div class="comics__cards">
                 <div class="comics__cards__img">  
                   <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}"
@@ -201,18 +193,18 @@ MINIFY CODE?
                 </div>
                 {{/each}}
               </script>
-      </ul>
-    </div>
-  </section>
+        </ul>
+      </div>
+    </section>
 
-  <section class="randomize">
- 
-    <div class="row">
-      <h1 class="primary__heading"> spider issues of 2019 </h1>
-      <div class="randomize__again">
-        <ul class="randomize__ul">
-          <script id="comic__book__randomize__template" type="text/x-handlebars-template">
-            <div class="randomize__comic__whole">
+    <section class="randomize">
+
+      <div class="row">
+        <h1 class="primary__heading"> spider issues of 2019 </h1>
+        <div class="randomize__again">
+          <ul class="randomize__ul">
+            <script id="comic__book__randomize__template" type="text/x-handlebars-template">
+              <div class="randomize__comic__whole">
         <div class="randomize__image"><img src="{{thumbnail.path}}/detail.{{thumbnail.extension}}" alt="{{title}}">
         </div>
         <div class="randomize__info">
@@ -241,12 +233,12 @@ MINIFY CODE?
         </div>
         </div>
         </script>
-        </ul>
+          </ul>
+        </div>
       </div>
-      </div>
-  </section> 
+    </section>
 
-</main>
+  </main>
   <section class="footer">
     <div class="row">
       <div class="footer__area">
@@ -255,14 +247,13 @@ MINIFY CODE?
       </div>
     </div>
   </section>
-  
-  <script
-			  src="https://code.jquery.com/jquery-3.4.1.js"
-			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			  crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <script src="node_modules/crypto-js/crypto-js.js"></script>
   <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
   <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
