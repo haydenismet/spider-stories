@@ -1,12 +1,8 @@
 <!--
-WRITE OVERALL TECH STACK USED AND PURPOSE OF PROJECT/LEARNING OBJECTIVES. 
-write limit to 10 for browser speed
-write limit or restrictions due to api restrictions
-
-CLEAN UP COMMITS/COMMIT MESSAGES.
-
-
-
+UTILIZED : HTML5/CSS3/FLEXBOX/QUERIES/SCSS/BEM/JAVASCRIPT/JQUERY/HANDLEBARS/CRYPTOJS/GIT
+OBJECTIVE : CREATE WEB APP UTILISING MARVEL API 
+10 RESULT LIMIT
+FURTHER API RESTRICTIONS FOR LINKTHROUGH TO OFFICIAL MARVEL SITE 
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,19 +15,14 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-
 </head>
 
 <body>
-
-
-
   <header>
-
     <section class="search__area">
       <section class="nav__section">
         <a href="index.html" class="nav__logo">
@@ -89,10 +80,6 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
       </div>
     </section>
   </header>
-
-
-
-
   <section class="search__results">
     <div class="row">
       <h1 class="primary__heading search__title ">Search Results</h1>
@@ -113,9 +100,7 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
                       <h6 class="sixth__heading"> {{name}}  </h6>
                     {{#unless name}}
                    <h6 class="sixth__heading">{{title}}</h6> 
-                    
                     {{/unless}}
-                    
                   </div>
                   </div>
                 </a>
@@ -134,11 +119,9 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
       </div>
     </div>
   </section>
-
   <main>
     <section class="characters">
       <div class="row">
-
         <h1 class="primary__heading">
           spider-verse characters
         </h1>
@@ -147,18 +130,15 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
             {{#each this}}
       <div class="characters__cards">
         <a href="{{urls.2.url}}" target="_blank">
-
             <div class="characters__cards__img">
               <img src="{{thumbnail.path}}/portrait_uncanny.{{thumbnail.extension}}" alt="{{name}}">
             </div>
             <div class="characters__cards__info">
               <h6 class="sixth__heading"> {{name}} </h6>
               <p class="characters__cards__p"> {{ comics.available}} issues </p>
-              
             </div>
           </a>
       </div>
-      
             {{/each}}
         </script>
         </ul>
@@ -198,7 +178,6 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
     </section>
 
     <section class="randomize">
-
       <div class="row">
         <h1 class="primary__heading"> spider issues of 2019 </h1>
         <div class="randomize__again">
@@ -211,7 +190,6 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
           <div class="randomize__headings__group">
           <div class="randomize__issue">#{{issueNumber}}</div>
           <div class="randomize__title">{{title}}
-             
           </div>
         </div>
         <div class="randomize__triple__items">
@@ -247,7 +225,6 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
       </div>
     </div>
   </section>
-
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="node_modules/crypto-js/crypto-js.js"></script>
@@ -255,5 +232,4 @@ CLEAN UP COMMITS/COMMIT MESSAGES.
   <script src="node_modules/handlebars-intl/dist/handlebars-intl.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>
