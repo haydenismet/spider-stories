@@ -392,7 +392,8 @@ a:visited {
     display: -ms-flexbox;
     display: flex; }
   .randomize__image img {
-    width: 100%; }
+    width: 100%;
+    object-fit: scale-down; }
   .randomize__info {
     display: -webkit-box;
     display: -ms-flexbox;
