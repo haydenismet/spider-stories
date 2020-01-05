@@ -217,9 +217,16 @@ function callComicDates(paramDate) {
       "&hash=" +
       hash,
     success: function(responseComics) {
+      
       $(".comics__listings")
         .children()
         .remove(".loading");
+
+        if(responseComics.data.results.length === 0) {
+          $(".comics__listings").prepend(
+            '<h1 class="primary__heading__tab--empty"> no comics this week</h1>'
+          );
+        }
 
       var source = $("#comic__book__template").html();
       var template = Handlebars.compile(source);
@@ -244,9 +251,11 @@ function callComicDates(paramDate) {
 //On initial load of page - check to see which toggle is checked - new week or new month. By default you have added html to make week 'checked'. But this is to say whatever is checked, to empty the content and run the function call again. 
 if ($("#week__new").is(":checked")) {
   $(".comics__card").empty();
+ 
   callComicDates("thisWeek");
 } else if ($("#month__new").is(":checked")) {
   $(".characters__cards").empty();
+
   callComicDates("thisMonth");
 }
 
@@ -254,9 +263,11 @@ if ($("#week__new").is(":checked")) {
 //Above was for initial load of the page, this is for user interaction. On click, if event target is week__new ID, remove character card and recall function for thisweek as the parameter, vice versa. 
 $(".comics__tab").on("click", function(e) {
   if ($(e.target).is("#week__new")) {
+    $(".primary__heading__tab--empty").remove();
     $(".comics__cards").remove();
     callComicDates("thisWeek");
   } else if ($(e.target).is("#month__new")) {
+    $(".primary__heading__tab--empty").remove();
     $(".comics__cards").remove();
     callComicDates("thisMonth");
   }

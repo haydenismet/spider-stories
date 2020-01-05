@@ -64,6 +64,20 @@ a:visited {
   letter-spacing: 0.4rem;
   border-left: 1rem solid #a22d23;
   margin-bottom: 5rem; }
+  .primary__heading__tab--empty {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    color: #ffffff;
+    background-color: #a22d23;
+    padding: 1rem 3rem 1rem 3rem;
+    border-left: 1rem solid #511510;
+    border-right: 1rem solid #511510;
+    text-align: center; }
 
 .fourth__heading {
   text-transform: uppercase;
