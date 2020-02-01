@@ -224,7 +224,7 @@ function callComicDates(paramDate) {
 
         if(responseComics.data.results.length === 0) {
           $(".comics__listings").prepend(
-            '<h1 class="primary__heading__tab--empty"> no comics this week</h1>'
+            '<h1 class="primary__heading__tab--empty"> no comics yet</h1>'
           );
         }
 
